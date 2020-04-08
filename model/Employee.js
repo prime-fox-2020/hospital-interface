@@ -5,7 +5,6 @@ class Employee {
       this.position = position
       this.username = username
       this.password = password
-      this.loggedIn = false
     }
   }
 

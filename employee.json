@@ -4,39 +4,41 @@
       "name": "michael",
       "position": "dokter",
       "username": "marcellino",
-      "password": "123456789",
-      "loggedIn": false
+      "password": "123456789"
    },
    {
       "id": 2,
       "name": "anggar",
       "position": "admin",
       "username": "batubumi",
-      "password": "aqwzoijn",
-      "loggedIn": false
+      "password": "aqwzoijn"
    },
    {
       "id": 3,
       "name": "qwerty",
       "position": "nurse",
       "username": "asdfgh",
-      "password": "zxcvbnm",
-      "loggedIn": false
+      "password": "zxcvbnm"
    },
    {
       "id": 4,
       "name": "poi",
       "position": "builder",
       "username": "asgard",
-      "password": "verum",
-      "loggedIn": false
+      "password": "verum"
    },
    {
       "id": 5,
       "name": "agatha",
       "position": "detektif",
       "username": "christie",
-      "password": "poirot",
-      "loggedIn": false
+      "password": "poirot"
+   },
+   {
+      "id": 6,
+      "name": "arthur",
+      "position": "dokter",
+      "username": "conan",
+      "password": "doyle"
    }
 ]

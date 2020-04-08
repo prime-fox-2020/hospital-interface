@@ -54,5 +54,15 @@
          "panas",
          "tinggi"
       ]
+   },
+   {
+      "id": 7,
+      "name": "greg",
+      "diagnosis": [
+         "flu",
+         "bersin",
+         "pusing",
+         "menggigil"
+      ]
    }
 ]
