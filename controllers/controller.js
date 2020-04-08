@@ -12,6 +12,16 @@ class Controller{
         })
     }
 
+    static listPatient(){
+        Model.listPatient((err, data) => {
+            if(err){
+                View.errorMsg();
+            } else {
+                View.listPatient(data);
+            }
+        })
+    }
+
     static register(value){
         Model.register(value, (err, data) => {
             if(err){

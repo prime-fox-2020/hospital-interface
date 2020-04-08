@@ -12,6 +12,12 @@ class View{
         });
     }
 
+    static listPatient(instance){
+        instance.forEach(e => {
+            console.log(e);
+        });
+    }
+
     static register(name, position){
         console.log('=-=-=-SUCCESS REGISTER-=-=-=');
         console.log(`Added "${name}" as "${position}" to your Employee Database`);

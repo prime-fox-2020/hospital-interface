@@ -6,6 +6,9 @@ switch(command){
     case 'listEmployee':
         Controller.listEmployee();
         break;
+    case 'listPatient':
+        Controller.listPatient();
+        break;
     case 'register':
         Controller.register(params);
         break;

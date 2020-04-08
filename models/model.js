@@ -7,7 +7,7 @@ class Model{
     static read(cb){
         fs.readFile('./data/employee.json', 'utf-8', (err, data) => {
             if(err){
-              cb(err, null)
+              cb(err, null);
             } else {
               data = JSON.parse(data);
               cb(null, data);
@@ -15,20 +15,24 @@ class Model{
         })
     }
 
+    static listPatient(cb){
+      fs.readFile('./data/patient.json', 'utf-8', (err, data) => {
+        if(err){
+          cb(err, null);
+        } else {
+          data = JSON.parse(data);
+          let instance = data.map(el => new Patient(...Object.values(el)));
+          cb(null, instance);
+        }
+      })
+    }
+
     static listEmployee(cb){
       this.read((err, data) => {
         if(err){
           cb(err, null);
         } else {
-          let instance = []
-          data.forEach(el => {
-            instance.push(new Employee(
-              el.name,
-              el.position,
-              el.username,
-              el.password
-            ))
-          });
+          let instance = data.map(el => new Employee(...Object.values(el)));
           cb(null, instance)
         }
       })
