@@ -1,10 +1,42 @@
 [
-    {
-        "id": 1,
-        "name": "paknunu",
-        "position": "dokter",
-        "username": "nunu",
-        "password": "1234",
-        "loginStatus": "login"
-    }
+  {
+    "id": 1,
+    "name": "paknunu",
+    "position": "dokter",
+    "username": "nunu",
+    "password": "1234",
+    "loginStatus": "logout"
+  },
+  {
+    "id": 2,
+    "name": "fahrul",
+    "position": "dokter",
+    "username": "rul",
+    "password": "1234",
+    "loginStatus": "login"
+  },
+  {
+    "id": 3,
+    "name": "akmal",
+    "position": "admin",
+    "username": "male",
+    "password": "1234",
+    "loginStatus": "logout"
+  },
+  {
+    "id": 4,
+    "name": "bayu",
+    "position": "officeboy",
+    "username": "bay",
+    "password": "1234",
+    "loginStatus": "logout"
+  },
+  {
+    "id": 5,
+    "name": "dinda",
+    "position": "receptionist",
+    "username": "din",
+    "password": "1234",
+    "loginStatus": "logout"
+  }
 ]

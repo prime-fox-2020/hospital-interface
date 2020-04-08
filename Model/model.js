@@ -1,5 +1,9 @@
 const fs = require('fs')
 const Employee = require('./employee')
+const Admin = require('./admin')
+const OfficeBoy = require('./officeboy')
+const Dokter = require('./dokter')
+const Receptionist = require('./receptionist')
 const Patient = require('./patient')
 
 class Model {
@@ -36,13 +40,59 @@ class Model {
         } else {
           id = data[data.length - 1].id + 1
         }
-        let newEmployee = new Employee(id, param[0], param[1], param[2], param[3], 'logout')
-        data.push(newEmployee)
-        this.write('./data/employee.json', JSON.stringify(data, null, 4), (err) => {
+        let newPeople 
+        switch (param[3]) {
+          case 'dokter':
+            data.push(newPeople = new Dokter(
+              id, 
+              param[0], 
+              param[1], 
+              param[2], 
+              param[3], 'logout'
+            ))
+            break;
+          case 'admin':
+            data.push(newPeople = new Admin(
+              id, 
+              param[0], 
+              param[1], 
+              param[2], 
+              param[3], 'logout'
+            ))
+            break;
+          case 'officeboy':
+            data.push(newPeople = new OfficeBoy(
+              id, 
+              param[0], 
+              param[1], 
+              param[2], 
+              param[3], 'logout'
+            ))
+            break;
+          case 'receptionist':
+            data.push(newPeople = new Receptionist(
+              id, 
+              param[0], 
+              param[1], 
+              param[2], 
+              param[3], 'logout'
+            ))
+            break;
+          default:
+            data.push(newPeople = new Employee(
+              id, 
+              param[0], 
+              param[1], 
+              param[2], 
+              param[3], 'logout'
+            ))
+            break;
+        }
+        this.write('./data/employee.json', JSON.stringify(data, null, 2), (err) => {
           if (err) {
             callback(err, null)
           } else {
-            callback(null, `save data success ${JSON.stringify(newEmployee)}. Total employee : ${data.length}`)
+            callback(null, `save data success ${JSON.stringify(newPeople)}. Total employee : ${data.length}`)
           }
         })
       }
@@ -77,7 +127,7 @@ class Model {
             message = `username / password wrong`
           }
   
-          this.write('./data/employee.json', JSON.stringify(data, null, 4), (err) => {
+          this.write('./data/employee.json', JSON.stringify(data, null, 2), (err) => {
             if (err) {
               callback(err, null, null)
             } else {
@@ -108,7 +158,7 @@ class Model {
         if (!logout) {
           message = 'Dont have any one login!'
         }
-        this.write('./data/employee.json', JSON.stringify(data, null, 4), (err) => {
+        this.write('./data/employee.json', JSON.stringify(data, null, 2), (err) => {
           if (err) {
             callback(err, null, null)
           } else {
@@ -140,7 +190,7 @@ class Model {
                 }
                 let newPatient = new Patient(id, params[0], params.slice(1))
                 data.push(newPatient)
-                this.write('./data/patients.json', JSON.stringify(data, null, 4), (err) => {
+                this.write('./data/patients.json', JSON.stringify(data, null, 2), (err) => {
                   if (err) {
                     callback(err, null)
                   } else {
