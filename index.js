@@ -9,6 +9,7 @@ switch(argv[0]){
     case 'register': controllers.register(params) ; break
     case 'login': controllers.login(params) ;break
     case `addPatient`: controllers.addPatient(params) ;break
+    case `logout`: controllers.logout() ;break
     default : controllers.listHelp() ;break
 
 }

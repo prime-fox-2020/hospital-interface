@@ -74,7 +74,7 @@ class Employee {
     })
   }
 
-  static cekLogin(callback){
+  static cekLoginDokter(callback){
 
     fs.readFile(`./employee.json`,'utf-8', (err,data)=>{
       if(err){
@@ -97,6 +97,60 @@ class Employee {
     })
   }
 
+  static logout(callback){
+
+    fs.readFile(`./employee.json`,'utf-8', (err,data)=>{
+      if(err){
+        callback(err,null)
+      }else{
+
+        const dataParse = JSON.parse(data)
+        let cek = false
+        for (let i = 0; i < dataParse.length; i++) {
+          if(dataParse[i].login == true){
+
+            dataParse[i].login = false
+            const dataStringfy = JSON.stringify(dataParse,null,2)
+            fs.writeFile(`./employee.json`,dataStringfy,(err)=>{
+              if(err){
+                callback(err,null)
+              }else{
+                callback(null,`user has been succesfully logout`)
+              }
+            })
+
+            cek = true
+          }
+        }
+        if(!cek){
+          callback(null,`tidak dapat logout, tidak ada user yang sedang login`)
+        }
+      }
+    })
+  }
+
+  static cekLoginUser(callback){
+
+    fs.readFile(`./employee.json`,'utf-8', (err,data)=>{
+      if(err){
+        callback(err,null)
+      }else{
+
+        const dataParse = JSON.parse(data)
+        let cek = false
+        for (let i = 0; i < dataParse.length; i++) {
+          if(dataParse[i].login == true){
+            callback(null,true)
+            cek = true
+            break;
+          }
+        }
+        if(!cek){
+          callback(null,false)
+        }
+      }
+    })
+  }
 
 
 }

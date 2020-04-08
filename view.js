@@ -10,6 +10,7 @@ class View {
             $node index.js register <namaPanggilan> <username> <password> <potition>
             $node index.js login <username> <password>
             $node index.js addPatient <id> <name> <task_diagnosis>
+            $node index.js logout
             `)
     }
 

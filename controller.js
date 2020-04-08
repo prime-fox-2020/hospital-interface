@@ -25,17 +25,25 @@ class Controllers{
     }
 
     static login(params){
-        modelEmployee.login(params,(err,data)=>{
+        modelEmployee.cekLoginUser((err,data) =>{
             if(err){
                 view.printError()
+            }else if(!data) {
+                modelEmployee.login(params,(err,data1)=>{
+                    if(err){
+                        view.printError()
+                    }else{
+                        view.printSucces(data1)
+                    }
+                })
             }else{
-                view.printSucces(data)
+                view.printSucces(`user ${params[0]} still logged in, You need to logo out first`)
             }
         })
     }
 
     static addPatient(params){
-        modelEmployee.cekLogin((err,data) =>{
+        modelEmployee.cekLoginDokter((err,data) =>{
             if(err){
                 view.printError()
             }else if(data) {
@@ -50,6 +58,18 @@ class Controllers{
                 view.printSucces(`tidak memiliki akses untuk add patient`)
             }
         })
+    }
+
+    static logout(){
+
+        modelEmployee.logout((err,data)=>{
+            if(err){
+                view.printError()
+            }else{
+                view.printSucces(data)
+            }
+        })
+
     }
 
 }
