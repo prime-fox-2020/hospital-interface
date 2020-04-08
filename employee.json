@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Charles",
+    "position": "doctor",
+    "username": "charles",
+    "password": "12345",
+    "login_status": false
+  },
+  {
+    "name": "tono",
+    "position": "officer",
+    "username": "tono",
+    "password": "54321",
+    "login_status": false
+  }
+]
