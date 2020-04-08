@@ -23,6 +23,7 @@ class ModelHospital {
     switch(status) {
       case 'employee': path = './datas/employees.json'; break;
       case 'patient': path = './datas/patients.json'; break;
+      case 'system': path = './datas/system.json'; break;
     }
     return path;
   }
@@ -31,7 +32,7 @@ class ModelHospital {
     const path = this.choosePath(status);
     fs.readFile(path, 'utf8', (err, data) => {
       const dataParse = JSON.parse(data);
-      callback(err, dataParse);
+      callback(null, dataParse);
     });
   }
 

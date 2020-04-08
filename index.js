@@ -7,6 +7,7 @@ switch(command) {
     case 'help': ControllerHospital.showHelp(); break;
     case 'showData': ControllerHospital.showData(parameter); break;
     case 'register': ControllerHospital.register(parameter); break;
+    case 'login': ControllerHospital.login(parameter); break;
     default: ControllerHospital.commandNotFound(); break;
 
 }

@@ -15,9 +15,7 @@ class ControllerHospital {
                     const newEmployee = ModelHospital.createOneEmployee(name, position, username, password);
                     data.push(newEmployee);
                     ModelHospital.createAll('employee', data, (err) => {
-                        if (err) {
-                            ViewHospital.displayError(err);
-                        }
+                        if (err) {ViewHospital.displayError(err);}
                     });
                 }
             });
@@ -44,6 +42,45 @@ class ControllerHospital {
             ViewHospital.showHelpWrongFormat();
             ViewHospital.showHelpDisplay();
         }
+    }
+
+    static login(userPass) {
+        if (userPass.length > 2 || userPass.length == 0) {
+            ViewHospital.showHelpWrongFormat();
+            ViewHospital.showHelpLogin();
+        } else {
+            const username = userPass[0];
+            const password = userPass[1];
+            ModelHospital.findAll('system', (err, system) => {
+                if (err) {
+                    ViewHospital.displayError(err);}
+                else {
+                    if (system[0].login) {
+                        ViewHospital.displayLoggedIn();}
+                    else {
+                        ModelHospital.findAll('employee', (err, data) => {
+                            if (err) {
+                                ViewHospital.displayError(err);}
+                            else {
+                                for (let employee of data) {
+                                    if (employee.username == username && employee.password == password) {
+                                        system[0].login = true;
+                                        system[0].user = employee.name;
+                                        ModelHospital.createAll('system', system, (err) => {
+                                            if (err) {ViewHospital.displayError(err);}
+                                        });
+                                        ViewHospital.loginSuccesfull(employee.name);
+                                        break;
+                                    }
+                                }
+                                if (!system[0].login) {ViewHospital.wrongUserPass();}
+                            }
+                        }); 
+                    }
+                }
+            });
+        }
+        
     }
 
     static showHelp() {
