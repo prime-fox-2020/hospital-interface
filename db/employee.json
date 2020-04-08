@@ -1,0 +1,19 @@
+[
+  [],
+  [
+    {
+      "id": 1,
+      "name": "budi",
+      "position": "dokter",
+      "username": "budi",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "afif",
+      "position": "doctor",
+      "username": "afif",
+      "password": "123456"
+    }
+  ]
+]
