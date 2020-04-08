@@ -11,4 +11,7 @@ switch(command){
     break;
     case "login":
     controller.login(input[0],input[1])
+    break;
+    case "logout":
+    controller.logout()
 }
