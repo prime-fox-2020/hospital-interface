@@ -9,6 +9,19 @@ switch (command) {
         Controller.register(params)
         break;
 
+    case 'login':
+        Controller.login(params)
+        break;
+    
+    case 'logout':
+        Controller.logout()
+        break;
+
+    case 'addPatient':
+        Controller.addPatient(params)
+        break;  
+
     default:
+        Controller.helper()
         break;
 }
