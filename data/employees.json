@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "budi wijaya",
+        "username": "budi",
+        "password": "123456",
+        "position": "dokter",
+        "loginStatus": "logout"
+    },
+    {
+        "id": 2,
+        "name": "angga saputra",
+        "username": "angga",
+        "password": "54321",
+        "position": "admin",
+        "loginStatus": "login"
+    }
+]
