@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Baha",
+    "diagnosis": [
+      "Diabetes",
+      "DBD"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Aswan",
+    "diagnosis": [
+      "deman",
+      "batuk",
+      "diare"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Said",
+    "diagnosis": [
+      "luka",
+      "peradangan",
+      "deman"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Hamid",
+    "diagnosis": [
+      "flu",
+      "batuk",
+      "deman"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Fitrah",
+    "diagnosis": [
+      "Diare",
+      "Batuk",
+      "Lemas"
+    ]
+  }
+]
