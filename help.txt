@@ -1,0 +1,15 @@
+HoPi (Hospital Interface) Usage : node hopi <command>
+
+[COMMAND]
+
+- node hopi [login] [username] [password]
+- node hopi [logout]
+- node hopi [show] [pegawai] # menampilkan semua daftar pegawai
+- node hopi [show] [pasien] # menampilkan semua daftar pasien
+- node hopi [session] # menampilkan semua user yang sedang login
+- node hopi [add] [pegawai] "nama,group,username,password" # (value nama, grup dan lainnnya dipisahkan oleh ',')
+- node hopi [add] [pasien] "nama,diagnose" # (value nama dan diagnose dipisahkan dengan tanda ',')
+- node hopi [update] [pasien] [id] "nama,diagnose" # untuk melakukan perubahan data pada pasien
+- node hopi [update] [pegawai] [id] "nama,group,username,password" # untuk melakukan perubahan data pada pegawai
+- node hopi [del] [pegawai] [id] # hapus data pegawai berdasarkan id
+- node hopi [del] [pasien] [id] # hapus data pasien berdasarkan id
