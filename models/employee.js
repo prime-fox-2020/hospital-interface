@@ -9,4 +9,28 @@ class Employee {
     }
 }
 
-module.exports = Employee
+class Admin extends Employee {
+    constructor(id, name, username, password, position, loginStatus) {
+        super(id, name, username, password, position, loginStatus)
+    }
+}
+
+class OfficeBoy extends Employee{
+    constructor(id, name, username, password, position, loginStatus) {
+        super(id, name, username, password, position, loginStatus)
+    }
+}
+
+class Dokter extends Employee{
+    constructor(id, name, username, password, position, loginStatus) {
+        super(id, name, username, password, position, loginStatus)
+    }
+}
+
+class Receptionist extends Employee{
+    constructor(id, name, username, password, position, loginStatus) {
+        super(id, name, username, password, position, loginStatus)
+    }
+}
+
+module.exports = {Employee, Admin, OfficeBoy, Dokter, Receptionist}

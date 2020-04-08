@@ -14,5 +14,13 @@
         "password": "54321",
         "position": "admin",
         "loginStatus": "login"
+    },
+    {
+        "id": 3,
+        "name": "ari nugroho",
+        "username": "ari",
+        "password": "12",
+        "position": "Admin",
+        "loginStatus": "logout"
     }
 ]

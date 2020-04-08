@@ -1,4 +1,4 @@
-const Employee = require('./employee')
+const { Employee, Admin, OfficeBoy, Dokter, Receptionist } = require('./employee')
 const Patient = require('./patient')
 
 const fs = require('fs')
@@ -37,9 +37,25 @@ class Model {
         } else {
           id = data[data.length - 1].id + 1
         }
-        let newEmployee = new Employee(id, param[0], param[1], param[2], param[3], 'logout')
-        data.push(newEmployee)
-        // console.log('data: ', data);
+        let newEmployee
+        switch (param[3]) {
+          case 'dokter':
+            data.push(newEmployee = new Dokter(id, param[0], param[1], param[2], param[3], 'logout'))
+            break;
+          case 'admin':
+            data.push(newEmployee = new Admin(id, param[0], param[1], param[2], param[3], 'logout'))
+            break;
+          case 'officeboy':
+            data.push(newEmployee = new OfficeBoy(id, param[0], param[1], param[2], param[3], 'logout'))
+            break;
+          case 'receptionist':
+            data.push(newEmployee = new Receptionist(id, param[0], param[1], param[2], param[3], 'logout'))
+            break;
+          default:
+            data.push(newEmployee = new Employee(id, param[0], param[1], param[2], param[3], 'logout'))
+            break;
+        }
+
         this.write('./data/employees.json', JSON.stringify(data, null, 4), (err) => {
           if (err) {
             cb(err, null)
@@ -61,7 +77,7 @@ class Model {
         let msgUserLogin
         data.forEach(el => {
           if (el.loginStatus == "login") {
-            checkLogin=true
+            checkLogin = true
             success = 'LOGOUT FIRST'
             msgUserLogin = `user ${el.username} still logged in. You need to logout first.`
           }
@@ -82,7 +98,7 @@ class Model {
             success = `ERROR`
             msg = `user ${params[0]} sorry 'user / password' is wrong`
           }
-  
+
           this.write('./data/employees.json', JSON.stringify(data, null, 4), (err) => {
             if (err) {
               cb(err, null, null)
@@ -93,7 +109,7 @@ class Model {
         } else {
           cb(null, success, msgUserLogin)
         }
-       
+
       }
     })
   }

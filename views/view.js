@@ -5,7 +5,7 @@ class View {
     }
 
     static message(msg) {
-        console.clear();
+        // console.clear();
         console.log('SUCCESS');
         console.log('===========');
         console.log(msg);
