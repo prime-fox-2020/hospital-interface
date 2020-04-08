@@ -17,6 +17,7 @@ switch(command){
         Controller.logout(params)
         break;
     case 'addPatient':
+        Controller.add(params)
         break;
     case undefined:
         Controller.message("Masukkan command yang sesuai.")

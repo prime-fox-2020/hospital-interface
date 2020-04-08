@@ -1,4 +1,5 @@
 const EmployeeFactory = require('./model').EmployeeFactory
+const Patient = require('./model').Patient
 const View = require('./view')
 
 class Controller {
@@ -52,7 +53,13 @@ class Controller {
         })
     }
     static add(params){
-        
+        EmployeeFactory.add(params, (err,data)=>{
+            if(err){
+                View.message(err)
+            }else{
+                View.message("Success added!")
+            }
+        })
     }
 }
 
