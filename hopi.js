@@ -24,9 +24,18 @@ main = () => {
 
         }; break;
 
+        case 'show' : {
+            switch (command[1]) {
+                case 'pegawai' : control.show('employee'); break;
+                case 'pasien' : control.show('patient'); break;
+            }
+        }; break;
+
         case 'help' : {
             control.help();
         }; break;
+
+        default: control.help();
     }
 }
 

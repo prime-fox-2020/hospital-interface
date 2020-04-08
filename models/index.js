@@ -44,16 +44,16 @@ class Crud {
   * CREATE & UPDATE user login session
   */
   
-  static session = username => {
+  static session = (username, role) => {
     fs.readFile('./db/session.json', 'utf8', (err, data) => {
       if (err) {
-        let session = [{session_id : 1, user: username}];
+        let session = [{session_id : 1, user: username, role: 'admin'}];
         this.writeFile('session', session)
       
       } else {
 
         data = JSON.parse(data);
-        data.push({session_id: data.length + 1, user: username});
+        data.push({session_id: data.length + 1, user: username, role: role});
         this.writeFile('session', data)
       
       }
@@ -70,13 +70,19 @@ class Crud {
   * login, logout & session checking
   */
 
-  static inSession = (username, callback) => {
+  static inSession = callback => {
     this.pool('session', (err, data) => {
       if (err) {
         callback(true, err)
       } else {
         callback(false, data)
       }
+    })
+  }
+
+  static canRegisterPatient = () => {
+    this.pool('session', (err, el) => {
+      return el[0].role !== 'dokter' ? false : true;
     })
   }
 
@@ -93,6 +99,9 @@ class Crud {
 
   static destroy(callback) {
     this.pool('session', (error, data) => {
+      if (data.length == 0) {
+        return;
+      }
       const user = data.pop();
       this.writeFile('session', [])
       callback(false, user.user)
@@ -104,8 +113,6 @@ class Crud {
   */
 
   static newData = (db, content, callback) => {
-
-    console.log(content)
 
     switch (true) {
       case content.hasOwnProperty('username') : {

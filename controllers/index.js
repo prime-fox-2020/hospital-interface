@@ -26,7 +26,7 @@ class Controller {
                                 Views.showMessage('login_success', data.name);
                                 Views.showMessage('motd');
                                 // update session login
-                                Crud.session(username);
+                                Crud.session(username, data.position);
                             }
                         })
 
@@ -60,14 +60,25 @@ class Controller {
 
                 } else {
 
-                    NewObject = new Patient(data.length + 1, content[0], content[1].split(','))
+                    if (!Crud.canRegisterPatient) {
+                        Views.showErrors('access_denied', 'not a doctor');
+                        return;
+                    }
+
+                    NewObject = new Patient(data.length + 1, content[0], content.slice(1, content.length))
 
                 }
 
-                Crud.newData(data, NewObject)
-                Views.showMessage('insert', NewObject, registeringWhat)
+                Crud.newData(data, NewObject);
+                Views.showMessage('insert', NewObject, registeringWhat, data.length);
 
             }
+        })
+    }
+
+    static show = table => {
+        Crud.pool(table, (err, result) => {
+            Views.showMessage('show_list', result)
         })
     }
 
