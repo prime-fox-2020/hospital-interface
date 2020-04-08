@@ -12,6 +12,9 @@ class View {
   static addPatientInfo(msg) {
     console.log(msg)
   }
+  static showEmployee(data) {
+    console.log(data)
+  }
 }
 
 module.exports = View

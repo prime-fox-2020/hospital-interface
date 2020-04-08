@@ -43,13 +43,26 @@ class Employee {
 
   positionSelector(position) {
     switch (position) {
-      case 'doktor': return new Dokter(); break
+      case 'dokter': return new Dokter(); break
       case 'admin': return new Admin(); break
       case 'office-boy': return new OfficeBoy(); break
       case 'receptionist': return new Receptionist(); break
     } 
   }
 
+  static findAll(callback) {
+    fs.readFile('./data/employee.json', 'utf8', (err, data) => {
+      if (err) {
+        callback(err, `Server unreachable`)
+      } else {
+        const employees = JSON.parse(data).map(el => {
+          let position = el._position._name.toLowerCase().replace(' ','-')
+          return new Employee([el._name, null, null, position])
+        })
+        callback(null, employees)
+      }
+    })
+  }
 
   static login(params, callback) {
     fs.readFile('./data/employee.json', 'utf8', (err, data) => {

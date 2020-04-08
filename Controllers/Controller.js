@@ -4,6 +4,15 @@ const View = require('../Views/View')
 
 class Controller {
 
+  static showEmployee() {
+    Employee.findAll((err, data) => {
+      if (err)
+        View.serverError(msg)
+      else
+        View.showEmployee(data)
+    })
+  }
+
   static register(params) {
     Employee.createOne(params, (err, msg) => {
       if (err)
