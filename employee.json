@@ -1,0 +1,37 @@
+[
+  {
+    "name": "james",
+    "role": "dokter",
+    "username": "james_cool",
+    "password": "james123",
+    "isLogin": false
+  },
+  {
+    "name": "George",
+    "role": "admin",
+    "username": "george_cuy",
+    "password": "george357",
+    "isLogin": false
+  },
+  {
+    "name": "cindy",
+    "role": "dokter",
+    "username": "cindy123",
+    "password": "cindycute",
+    "isLogin": false
+  },
+  {
+    "name": "clara",
+    "role": "receptionist",
+    "username": "clara55",
+    "password": "claraKirei",
+    "isLogin": false
+  },
+  {
+    "name": "craig",
+    "role": "dokter",
+    "username": "craigman",
+    "password": "craig890",
+    "isLogin": false
+  }
+]
