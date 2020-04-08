@@ -76,7 +76,7 @@ class Hospital {
 
                             fs.writeFile('./employee.json', JSON.stringify(data, null, 2), (err) => {
                                 if(err) {
-                                    callback(err, null)
+                                    callback(err)
                                 } else {
                                     callback(null, true)
                                 }
