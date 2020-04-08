@@ -1,0 +1,51 @@
+[
+   {
+      "id": 1,
+      "name": "daniel",
+      "diagnosis": [
+         "batuk",
+         "flu",
+         "pilek",
+         "demam"
+      ]
+   },
+   {
+      "id": 2,
+      "name": "samidi",
+      "diagnosis": [
+         "pilek",
+         "demam",
+         "asam urat",
+         "boyoken",
+         "corona"
+      ]
+   },
+   {
+      "id": 3,
+      "name": "tukiyem",
+      "diagnosis": [
+         "pusing",
+         "stress",
+         "insomnia"
+      ]
+   },
+   {
+      "id": 4,
+      "name": "sumijah",
+      "diagnosis": [
+         "sakit perut",
+         "mencret",
+         "batuk",
+         "demam tinggi"
+      ]
+   },
+   {
+      "id": 5,
+      "name": "tata",
+      "diagnosis": [
+         "sakit kepala",
+         "batuk",
+         "demam rendah"
+      ]
+   }
+]

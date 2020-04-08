@@ -1,0 +1,8 @@
+$ node index.js
+$ node index.js help
+$ node index.js list:employee
+$ node index.js list:patient
+$ node index.js register:employee <myName> <myPosition> <myUsername> <myPassword>
+$ node index.js login <myUsername> <myPassword>
+$ node index.js add:patient <patientName> <diagnosis_1> <diagnosis_2> <diagnosis_3> ... <diagnosis_n>    
+$ node index.js logout
