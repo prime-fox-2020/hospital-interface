@@ -30,13 +30,5 @@
     "password": "asd",
     "position": "dokter",
     "isLogin": false
-  },
-  {
-    "id": 5,
-    "name": "Susi",
-    "username": "susi",
-    "password": "asd",
-    "position": "receptionist",
-    "isLogin": false
   }
 ]

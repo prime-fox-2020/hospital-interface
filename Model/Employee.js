@@ -1,7 +1,7 @@
-const Dokter = require('./Dokter')
-const Admin = require('./Admin')
 const Receptionist = require('./Receptionist')
 const OfficeBoy = require('./OfficeBoy')
+const Dokter = require('./Dokter')
+const Admin = require('./Admin')
 const fs = require('fs')
 
 class Employee {
@@ -12,8 +12,8 @@ class Employee {
 
   positionSelector(position) {
     switch (position) {
-      case 'dokter': return new Dokter(); break
       case 'admin': return new Admin(); break
+      case 'dokter': return new Dokter(); break
       case 'office-boy': return new OfficeBoy(); break
       case 'receptionist': return new Receptionist(); break
     } 
@@ -25,9 +25,7 @@ class Employee {
         callback(err, null)
       } else {
         const employees = JSON.parse(data)
-          .map(el => {
-            return new Employee([el.name, el.position])
-          })
+          .map(el => new Employee([el.name, el.position]))
         callback(null, employees)
       }
     })
@@ -57,6 +55,24 @@ class Employee {
         } else {
           callback(null, `${employees[findUserLogin].name} is still login. He / She need to logout first!`)
         }
+      }
+    })
+  }
+
+  static logout(callback) {
+    fs.readFile('./data/employee.json', 'utf8', (err, data) => {
+      if (err) {
+        callback(err, null)
+      } else {
+        const employees = JSON.parse(data)
+        employees.forEach(employee => employee.isLogin = false)
+        fs.writeFile('./data/employee.json', JSON.stringify(employees, null, 2), err => {
+          if (err) {
+            callback(err, null)
+          } else {
+            callback(null, 'user has been successfully logout!')
+          }
+        })
       }
     })
   }

@@ -5,20 +5,29 @@ const View = require('../Views/View')
 class Controller {
 
   static showEmployee() {
-    Employee.findAll((err, data) => {
+    Employee.findAll((err, datas) => {
       if (err)
         View.serverError(err)
       else
-        View.showEmployee(data)
+        View.showEmployee(datas)
     })
   }
 
   static showPatient() {
-    Patient.findAll((err, data) => {
+    Patient.findAll((err, datas) => {
       if (err)
         View.serverError(err)
       else
-        View.showPatient(data)
+        View.showPatient(datas)
+    })
+  }
+
+  static addPatient(params) {
+    Patient.createOne(params, (err, msg) => {
+      if (err)
+        View.serverError(err)
+      else
+        View.addPatientInfo(msg)
     })
   }
 
@@ -40,13 +49,21 @@ class Controller {
     })
   }
 
-  static addPatient(params) {
-    Patient.createOne(params, (err, msg) => {
+  static logout() {
+    Employee.logout((err, msg) => {
       if (err)
         View.serverError(err)
       else
-        View.addPatientInfo(msg)
+        View.logoutInfo(msg)
     })
+  }
+
+  static help() {
+    View.help()
+  }
+
+  static errorCmd(cmd) {
+    View.errorCmd(cmd)
   }
 }
 
