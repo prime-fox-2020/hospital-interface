@@ -1,10 +1,13 @@
 class Patient {
   constructor(id, name, diagnosis) {
-    this.id = id
+    this._id = id
     this._name = name
     this._diagnosis = diagnosis
   }
 
+  get id() {
+    return this._id
+  }
   get name() {
     return this._name
   }
