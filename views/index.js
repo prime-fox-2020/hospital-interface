@@ -17,7 +17,7 @@ class Messaging {
     static showMessage(type, content, table) {
 
         switch (type) {
-            case 'insert': console.log(`\nYou've been add ${content} into ${table}\n1 Row Affected\n`); break;
+            case 'insert': console.log(`\nYou've been add ${JSON.stringify(content)} into ${table}\n1 Row Affected\n`); break;
             case 'delete' : console.log(`${content} has been deleted from ${table}\n1 Row Affected\n`); break;
             case 'update' : console.log(`\nUpdating ${content} succeded\n1 Row Affected\n`); break
             // case 'show_list' : console.table(`\n ${content.length == 0 ? `There is no ${table} yet` : JSON.stringify(content)}\n`); break;

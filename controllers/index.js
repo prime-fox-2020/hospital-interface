@@ -13,7 +13,7 @@ class Controller {
                 Views.showErrors('unknown');
                 return;
             } else {
-                Crud.inSession(username, (err, result) => {
+                Crud.inSession((err, result) => {
                     if (result.length !== 0) {
                         Views.showErrors('in_session', result[0].user);
                         return;
@@ -65,6 +65,7 @@ class Controller {
                 }
 
                 Crud.newData(data, NewObject)
+                Views.showMessage('insert', NewObject, registeringWhat)
 
             }
         })
