@@ -7,6 +7,9 @@ switch (command) {
     case 'help':
         Controller.showHelp()
         break
+    case 'list':
+        Controller.showList()
+        break
     case 'register':
         Controller.register(params)
         break;

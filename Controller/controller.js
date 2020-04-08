@@ -2,7 +2,23 @@ const Model = require('../Model/model')
 const View = require('../View/view')
 
 class Controller {
-
+    
+    static default(){
+        View.message('Please type "index.js help" for more information')
+    }
+    static showHelp(){
+        View.message('Please add your Command:')
+        View.showHelp()
+    }
+    static showList(){
+        Model.list((err, data) => {
+            if (err) {
+                View.message(err)
+            } else {
+                View.showList(data)
+            }
+        })
+    }
     static register(params) {
         Model.register(params, (error, data) => {
             if (error) {
@@ -41,13 +57,6 @@ class Controller {
                 View.message(data)
             }
         })
-    }
-    static default(){
-        View.message('Please type "index.js help" for more information')
-    }
-    static showHelp(){
-        View.message('Please add your Command:')
-        View.showHelp()
     }
 }
 

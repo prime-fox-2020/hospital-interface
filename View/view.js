@@ -11,6 +11,10 @@ class View {
         
     }
 
+    static showList(data){
+        console.table(data)
+    }
+
     static err(error) {
         console.log(error);
     }

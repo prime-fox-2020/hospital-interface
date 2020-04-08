@@ -29,6 +29,64 @@ class Model {
     })
   }
 
+  static list (callback){
+    this.read('./data/employee.json', (err, data) => {
+      if (err) {
+        callback(err, null)
+      } else {
+        const newPeople = []
+        for (let i = 0; i < data.length; i++) {
+          switch (data[i].position) {
+            case 'dokter':
+              newPeople.push(new Dokter(
+                data[i].id,
+                data[i].name,
+                data[i].username,
+                data[i].password,
+                data[i].position,
+                data[i].loginStatus
+              ))
+              break;
+            case 'admin':
+              newPeople.push(new Admin(
+                data[i].id,
+                data[i].name,
+                data[i].username,
+                data[i].password,
+                data[i].position,
+                data[i].loginStatus
+              ))
+              break;
+            case 'officeboy':
+              newPeople.push(new OfficeBoy(
+                data[i].id,
+                data[i].name,
+                data[i].username,
+                data[i].password,
+                data[i].position,
+                data[i].loginStatus
+              ))
+              break;
+            case 'receptionist':
+              newPeople.push(new Receptionist(
+                data[i].id,
+                data[i].name,
+                data[i].username,
+                data[i].password,
+                data[i].position,
+                data[i].loginStatus
+              ))
+              break;
+          
+            default:
+              break;
+          }
+        }
+        callback(err, newPeople)
+      }
+    })
+  }
+
   static register(param, callback) {
     this.read('./data/employee.json', (err, data) => {
       if (err) {
@@ -48,7 +106,7 @@ class Model {
               param[0], 
               param[1], 
               param[2], 
-              param[3], 'logout'
+              param[3]
             ))
             break;
           case 'admin':
@@ -57,7 +115,7 @@ class Model {
               param[0], 
               param[1], 
               param[2], 
-              param[3], 'logout'
+              param[3]
             ))
             break;
           case 'officeboy':
@@ -66,7 +124,7 @@ class Model {
               param[0], 
               param[1], 
               param[2], 
-              param[3], 'logout'
+              param[3]
             ))
             break;
           case 'receptionist':
@@ -75,7 +133,7 @@ class Model {
               param[0], 
               param[1], 
               param[2], 
-              param[3], 'logout'
+              param[3]
             ))
             break;
           default:
@@ -84,7 +142,7 @@ class Model {
               param[0], 
               param[1], 
               param[2], 
-              param[3], 'logout'
+              param[3]
             ))
             break;
         }
