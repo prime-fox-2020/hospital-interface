@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "username": "budi",
+    "password": "123456",
+    "role": "doctor",
+    "isLogin": false
+  },
+  {
+    "id": 2,
+    "username": "budi",
+    "password": "123456",
+    "role": "doctor",
+    "isLogin": false
+  },
+  {
+    "id": 3,
+    "username": "budi",
+    "password": "123456",
+    "role": "doctor",
+    "isLogin": false
+  },
+  {
+    "id": 4,
+    "username": "budi",
+    "password": "123456",
+    "role": "doctor",
+    "isLogin": false
+  },
+  {
+    "id": 5,
+    "username": "budi",
+    "password": "123456",
+    "role": "doctor",
+    "isLogin": false
+  }
+]
