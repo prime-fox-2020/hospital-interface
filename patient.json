@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "saya",
+        "diagnosis": "masuk angin"
+    },
+    {
+        "id": 2,
+        "name": "siapa",
+        "diagnosis": "sakit kaki"
+    }
+]
