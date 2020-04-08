@@ -1,17 +1,22 @@
 [
-    {
-        "username": "angga",
-        "password": "54321",
-        "role": "admin"
-    },
-    {
-        "username": "syukur",
-        "password": "123",
-        "role": "dokter"
-    },
-    {
-        "username": "syukur",
-        "password": "123",
-        "role": "dokter"
-    }
+  {
+    "username": "budi",
+    "password": "123456",
+    "role": "dokter"
+  },
+  {
+    "username": "angga",
+    "password": "54321",
+    "role": "admin"
+  },
+  {
+    "username": "angga2",
+    "password": "54321",
+    "role": "admin"
+  },
+  {
+    "username": "syukur",
+    "password": "12345",
+    "role": "dokter"
+  }
 ]
