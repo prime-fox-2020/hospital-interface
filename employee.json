@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Bill",
+    "position": "CEO",
+    "username": "iamBill",
+    "password": "hmmm,iforgot",
+    "status": "offline"
+  },
+  {
+    "id": 2,
+    "name": "Andrean Wira",
+    "position": "Manager",
+    "username": "andreanWP",
+    "password": "123456",
+    "status": "offline"
+  },
+  {
+    "id": 3,
+    "name": "Shein",
+    "position": "Dokter",
+    "username": "sheinMaster",
+    "password": "123456",
+    "status": "online"
+  },
+  {
+    "id": 4,
+    "name": "Anisa",
+    "position": "Head Hospital",
+    "username": "iamAnisa",
+    "password": "123456",
+    "status": "offline"
+  },
+  {
+    "id": 5,
+    "name": "Bagus",
+    "position": "Admin",
+    "username": "bagusSekali",
+    "password": "123456",
+    "status": "offline"
+  }
+]
