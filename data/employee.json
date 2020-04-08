@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Andi",
+    "position": "dokter",
+    "username": "andidokter",
+    "password": "andi1234"
+  },
+  {
+    "name": "Rini",
+    "position": "admin",
+    "username": "rinichan",
+    "password": "rini4431"
+  },
+  {
+    "name": "Luna",
+    "position": "receptionist",
+    "username": "lunabulan",
+    "password": "lunlun23"
+  },
+  {
+    "name": "Hedi",
+    "position": "office boy",
+    "username": "hedikul",
+    "password": "coolob1"
+  },
+  {
+    "name": "Ani",
+    "position": "dokter",
+    "username": "anii23",
+    "password": "aninini"
+  }
+
+]
