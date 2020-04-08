@@ -3,10 +3,12 @@ class View {
         console.log(`
         $ node index.js 
         $ node index.js help
+        $ node index.js list
         $ node index.js register <name> <username> <password> <position>
         $ node index.js login <username> <password>
         $ node index.js logout
         $ node index.js addPatient <patient> <diagnosis>
+        $ node index.js listPatient
         `);
         
     }
