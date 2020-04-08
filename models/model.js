@@ -46,14 +46,11 @@ class Model{
             password: value[2],
             isLogin: false
           });
-
-          console.log(data)
   
           fs.writeFile('./data/employee.json', JSON.stringify(data, null, 2), (err) => {
             if(err){
               cb(err, null);
             } else{
-              console.log('MASOOK')
               cb(null, data);
             }
           })
@@ -72,7 +69,6 @@ class Model{
           data.forEach(el => {
             if(el.username === username && el.password === password){
               if(!el.isLogin){
-                console.log(el)
                 el.isLogin = true;
                 fs.writeFile('./data/employee.json', JSON.stringify(data, null, 2), (err) => {
                   if(err){
@@ -87,6 +83,76 @@ class Model{
             }
           });
           cb(null, 'Wrong username / password')
+        }
+      })
+    }
+
+    static addPatient(newPatient, cb){
+      fs.readFile('./data/patient.json', (err, data) => {
+        if(err){
+          cb(err, null);
+        } else {
+          let dataPatient = JSON.parse(data);
+          let patientPerson = newPatient[0];
+          let patientName = newPatient[1];
+          let diagnosis = newPatient.slice(2);
+
+          this.read((err, data) => {
+            if(err){
+              cb(err, null);
+            } else {
+              let dataEmployee = data;
+              let flag = false;
+
+              dataEmployee.forEach(el => {
+                if(el.isLogin){
+                  if(el.position === 'dokter'){
+                    flag = true;
+                    for (let i = 0; i < patientPerson; i++) {
+                      dataPatient.push({
+                        id: dataPatient[dataPatient.length - 1].id + 1,
+                        name: patientName,
+                        diagnosis: diagnosis
+                      });
+                    }
+                    fs.writeFile('./data/patient.json', JSON.stringify(dataPatient, null, 2), (err) => {
+                      if(err){
+                        cb(err, null);
+                      } else {
+                        cb(null, true);
+                      }
+                    })
+                  } 
+                }
+              });
+              if(flag){
+                cb(null, true);
+              } else {
+                cb(null, `can't have an access to add patient!`);
+              }
+            }
+          })
+        }
+      })
+    }
+
+    static logout(cb){
+      this.read((err, data) => {
+        if(err) {
+          cb(err, null);
+        } else {
+          data.forEach(el => {
+            if(el.isLogin){
+              el.isLogin = false;
+              fs.writeFile('./data/employee.json', JSON.stringify(data, null, 2), (err) => {
+                if(err){
+                  cb(err, null);
+                } else {
+                  cb(null, true);
+                }
+              })
+            }
+          });
         }
       })
     }

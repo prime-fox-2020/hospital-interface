@@ -27,10 +27,34 @@ class Controller{
             }
 
             if(typeof data === 'string'){
-                View.login(data)
+                View.login(data);
             } else {
                 View.login(username_password);
             }
+        })
+    }
+
+    static addPatient(patient){
+        Model.addPatient(patient, (err, data) => {
+            if(err){
+                throw err;
+            }
+
+            if(typeof data === 'string'){
+                View.addPatient(data);
+            } else {
+                View.addPatient(patient);
+            }
+        })
+    }
+
+    static logout(){
+        Model.logout((err, data) => {
+            if(err){
+                throw err;
+            }
+
+            View.logout();
         })
     }
 }

@@ -12,6 +12,11 @@ switch(command){
     case 'login':
         Controller.login(params);
         break;
+    case 'addPatient':
+        Controller.addPatient(params);
+        break;
+    case 'logout':
+        Controller.logout();
     default:
         break;
 }
