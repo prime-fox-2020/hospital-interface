@@ -1,39 +1,33 @@
 const fs = require('fs')
 
 class Patient {
-  constructor(id, name, diagnosis) {
-    this._id = id
-    this._name = name
-    this._diagnosis = diagnosis
+  constructor([name, diagnosis]) {
+    this.name = name
+    this.diagnosis = diagnosis
   }
 
-  get id() {
-    return this._id
+  static findAll(callback) {
+    fs.readFile('./data/patient.json', 'utf8', (err, data) => {
+      if (err) {
+        callback(err, null)
+      } else {
+        const patients = JSON.parse(data)
+          .map(el => new Patient([el.name, el.diagnosis]))
+        callback(null, patients)
+      }
+    })
   }
-  get name() {
-    return this._name
-  }
-  set name(name) {
-    this._name = name
-  }
-  get diagnosis() {
-    return this._diagnosis
-  }
-  set diagnosis(diagnosis) {
-    this._diagnosis = diagnosis
-  }
-
   static createOne([name, ...diagnosis], callback) {
     fs.readFile('./data/employee.json', 'utf8', (err, data) => {
       if (err) {
-        callback(err, `Server unreachable`)
+        callback(err, null)
       } else {
         const employees = JSON.parse(data)
         const findUserLogin = employees.findIndex(user => user.isLogin)
         if (findUserLogin >= 0 && employees[findUserLogin].position === 'dokter') {
           fs.readFile('./data/patient.json', 'utf8', (err, data) => {
             if (err) {
-              callback(err, `Server unreachable`)
+              callback(err, null)
             } else {
               const patients = JSON.parse(data)
               let id

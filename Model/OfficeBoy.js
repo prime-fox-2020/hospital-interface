@@ -5,9 +5,6 @@ class OfficeBoy extends Position {
     super(false)
     this._name = 'Office Boy'
   }
-  get name() {
-    return this._name
-  }
 }
 
 module.exports = OfficeBoy

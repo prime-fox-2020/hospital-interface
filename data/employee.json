@@ -22,5 +22,13 @@
     "password": "asd",
     "position": "dokter",
     "isLogin": false
+  },
+  {
+    "id": 4,
+    "name": "Suryo",
+    "username": "suryo",
+    "password": "pratomo",
+    "position": "admin",
+    "isLogin": true
   }
 ]

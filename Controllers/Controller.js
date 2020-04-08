@@ -7,16 +7,25 @@ class Controller {
   static showEmployee() {
     Employee.findAll((err, data) => {
       if (err)
-        View.serverError(msg)
+        View.serverError(err)
       else
         View.showEmployee(data)
+    })
+  }
+
+  static showPatient() {
+    Patient.findAll((err, data) => {
+      if (err)
+        View.serverError(err)
+      else
+        View.showPatient(data)
     })
   }
 
   static register(params) {
     Employee.createOne(params, (err, msg) => {
       if (err)
-        View.serverError(msg)
+        View.serverError(err)
       else
         View.registerInfo(msg)
     })
@@ -25,7 +34,7 @@ class Controller {
   static login(params) {
     Employee.login(params, (err, msg) => {
       if (err)
-        View.serverError(msg)
+        View.serverError(err)
       else
         View.loginInfo(msg)
     })
@@ -34,7 +43,7 @@ class Controller {
   static addPatient(params) {
     Patient.createOne(params, (err, msg) => {
       if (err)
-        View.serverError(msg)
+        View.serverError(err)
       else
         View.addPatientInfo(msg)
     })

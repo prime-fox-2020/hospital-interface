@@ -5,9 +5,6 @@ class Admin extends Position {
     super(false)
     this._name = 'Admin'
   }
-  get name() {
-    return this._name
-  }
 }
 
 module.exports = Admin

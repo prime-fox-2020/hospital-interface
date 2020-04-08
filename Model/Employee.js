@@ -6,36 +6,8 @@ const fs = require('fs')
 
 class Employee {
   constructor([name, position]) {
-    this._name = name
-    this._position = this.positionSelector(position)
-  }
-
-  get name() {
-    return this.name
-  }
-  set name(name) {
-    this._name = name
-  }
-  get position() {
-    return this._position
-  }
-  set position(position) {
-    this._position = this.positionSelector(position)
-  }
-  get username() {
-    return this._username
-  }
-  get password() {
-    return this._password
-  }
-  set password(pwd) {
-    this._password = pwd
-  }
-  get isLogin() {
-    return this._isLogin
-  }
-  set isLogin(bool) {
-    this._isLogin = bool
+    this.name = name
+    this.position = this.positionSelector(position)
   }
 
   positionSelector(position) {
@@ -50,7 +22,7 @@ class Employee {
   static findAll(callback) {
     fs.readFile('./data/employee.json', 'utf8', (err, data) => {
       if (err) {
-        callback(err, `Server unreachable`)
+        callback(err, null)
       } else {
         const employees = JSON.parse(data)
           .map(el => {
@@ -64,7 +36,7 @@ class Employee {
   static login([username, password], callback) {
     fs.readFile('./data/employee.json', 'utf8', (err, data) => {
       if (err) {
-        callback(err, `Server unreachable`)
+        callback(err, null)
       } else {
         const employees = JSON.parse(data)
         const findUserLogin = employees.findIndex(user => user.isLogin === true)
@@ -92,7 +64,7 @@ class Employee {
   static createOne([name, username, password, position], callback) {
     fs.readFile('./data/employee.json', 'utf8', (err, data) => {
       if (err) {
-        callback(err, `Server unreachable`)
+        callback(err, null)
       } else {
         const employees = JSON.parse(data)
         let id
