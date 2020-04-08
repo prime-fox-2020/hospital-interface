@@ -1,0 +1,26 @@
+[
+  {
+    "username": "samirudin",
+    "password": "87654578",
+    "role": "doctor",
+    "isLogin": true
+  },
+  {
+    "username": "Safril",
+    "password": "76537963",
+    "role": "admin",
+    "isLogin": false
+  },
+  {
+    "username": "Ridho",
+    "password": "07863738",
+    "role": "receptionist",
+    "isLogin": false
+  },
+  {
+    "username": "Ipul",
+    "password": "78786342",
+    "role": "officeboy",
+    "isLogin": false
+  }
+]
