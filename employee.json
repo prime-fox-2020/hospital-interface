@@ -12,8 +12,5 @@
     "username": "tono",
     "password": "54321",
     "login_status": false
-  },
-  {
-    "login_status": false
   }
 ]

@@ -5,7 +5,7 @@ const command = argv[0]
 const params = argv.slice(1)
 
 switch(command){
-    case 'help' : Controller.showMsg('help');
+    case 'help' : Controller.showMsg('help'); break
     case 'register' : Controller.register(params) ; break
     case 'login' : Controller.login(params); break
     case 'logout' : Controller.logout(); break
