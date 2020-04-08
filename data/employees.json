@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "getarnr",
+    "username": "getar",
+    "password": "123",
+    "position": "dokter",
+    "loginStatus": false
+  },
+  {
+    "id": 2,
+    "name": "diervaz",
+    "username": "dier",
+    "password": "321",
+    "position": "other",
+    "loginStatus": false
+  },
+  {
+    "id": 3,
+    "name": "123",
+    "username": "456",
+    "password": "789",
+    "position": "other",
+    "loginStatus": false
+  }
+]
