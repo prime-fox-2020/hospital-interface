@@ -1,0 +1,42 @@
+[
+   {
+      "id": 1,
+      "name": "michael",
+      "position": "dokter",
+      "username": "marcellino",
+      "password": "123456789",
+      "loggedIn": false
+   },
+   {
+      "id": 2,
+      "name": "anggar",
+      "position": "admin",
+      "username": "batubumi",
+      "password": "aqwzoijn",
+      "loggedIn": false
+   },
+   {
+      "id": 3,
+      "name": "qwerty",
+      "position": "nurse",
+      "username": "asdfgh",
+      "password": "zxcvbnm",
+      "loggedIn": false
+   },
+   {
+      "id": 4,
+      "name": "poi",
+      "position": "builder",
+      "username": "asgard",
+      "password": "verum",
+      "loggedIn": false
+   },
+   {
+      "id": 5,
+      "name": "agatha",
+      "position": "detektif",
+      "username": "christie",
+      "password": "poirot",
+      "loggedIn": false
+   }
+]
