@@ -1,6 +1,4 @@
 const fs = require('fs')
-const Controller = require('./controller')
-const VIew = require('./view')
 
 class Patient {
   constructor(id, name, diagnosis) {
@@ -16,7 +14,7 @@ class Patient {
     return beta
   }
 
-  static addPatient (id, name, diagnosis){
+  static addPatient (name, diagnosis){
     let dataPatients = Patient.dataPatient()
     let dataEmployee = Employee.dataEmployee()
     let checkLogin = false
@@ -27,7 +25,7 @@ class Patient {
     }
     if (checkLogin == true){
       dataPatients.push({
-        ID: id,
+        ID: dataPatients.length+1,
         name: name,
         diagnosis: diagnosis
       })
@@ -41,7 +39,8 @@ class Patient {
 }
 
 class Employee {
-  constructor(name, position, username, password, login = false) {
+  constructor(ID, name, position, username, password, login = false) {
+    this.ID = ID
     this.name = name
     this.position = position
     this.username = username
@@ -58,14 +57,17 @@ class Employee {
 
   static register (name, position, username, password){
     let data = this.dataEmployee()
-    data.push({
-      ID: Number(data.length-1) + 1,
-      name: name,
-      position: position,
-      username: username,
-      password: password,
-      login: false
-    })
+    if (position == 'doctor'){
+      data.push(new Doctor(data.length+1, name, position, username, password))
+    } else if (position == 'officeBoy'){
+      data.push(new OfficeBoy(data.length+1, name, position, username, password))
+    } else if (position == 'admin'){
+      data.push(new Admin(data.length+1, name, position, username, password))
+    } else if (position == 'receptionist'){
+      data.push(new Receptionist(data.length+1, name, position, username, password))
+    } else {
+      return `Position not available`
+    }
     console.log(`Save data success {username: ${data[data.length-1].username}, password: ${data[data.length-1].password}, role: ${data[data.length-1].position}}. Total employee: ${data.length}`)
     let newData = JSON.stringify(data, null, 4)
     fs.writeFileSync('./employee.json',newData)
@@ -73,26 +75,26 @@ class Employee {
 }
 
 class Doctor extends Employee {
-  constructor (name, position, username, password, login){
-    super(name, position, username, password, login)
+  constructor (ID, name, position = 'doctor', username, password, login){
+    super(ID, name, position, username, password, login)
   }
 }
 
 class OfficeBoy extends Employee {
-  constructor (name, position, username, password, login){
-    super(name, position, username, password, login)
+  constructor (ID, name, position = 'officeBoy', username, password, login){
+    super(ID, name, position, username, password, login)
   }
 }
 
 class Admin extends Employee {
-  constructor (name, position, username, password, login){
-    super(name, position, username, password, login)
+  constructor (ID, name, position = 'admin', username, password, login){
+    super(ID, name, position, username, password, login)
   }
 }
 
 class Receptionist extends Employee {
-  constructor (name, position, username, password, login){
-    super(name, position, username, password, login)
+  constructor (ID, name, position = 'receptionist', username, password, login){
+    super(ID, name, position, username, password, login)
   }
 }
 

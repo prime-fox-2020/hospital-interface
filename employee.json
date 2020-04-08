@@ -1,18 +1,34 @@
 [
     {
-        "ID": 0,
+        "ID": 1,
         "name": "sample1",
         "position": "doctor",
         "username": "sample1id",
         "password": "sample1pass",
+        "login": true
+    },
+    {
+        "ID": 2,
+        "name": "sample2",
+        "position": "officeBoy",
+        "username": "sample2id",
+        "password": "sample2pass",
         "login": false
     },
     {
-        "ID": 1,
-        "name": "sample2",
+        "ID": 3,
+        "name": "sample3",
         "position": "admin",
-        "username": "sample2id",
-        "password": "sample2pass",
+        "username": "sample3id",
+        "password": "sample3pass",
+        "login": false
+    },
+    {
+        "ID": 4,
+        "name": "sample4",
+        "position": "receptionist",
+        "username": "sample4id",
+        "password": "sample4pass",
         "login": false
     }
 ]

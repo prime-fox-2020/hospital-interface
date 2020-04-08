@@ -18,8 +18,8 @@ class Controller {
     Model.Employee.register(name, position, username, password)
   }
 
-  static addPatient (id, name, diagnosis){
-    Model.Patient.addPatient(id, name, diagnosis)
+  static addPatient (name, diagnosis){
+    Model.Patient.addPatient(name, diagnosis)
   }
 }
 
