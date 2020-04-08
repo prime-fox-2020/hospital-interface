@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nama": "yusuf",
+        "diagnosis": "kanker"
+    },
+    {
+        "id": 2,
+        "nama": "budi",
+        "diagnosis": "batuk"
+    },
+    {
+        "id": 3,
+        "nama": "mira",
+        "diagnosis": "kanker"
+    }
+    
+]
