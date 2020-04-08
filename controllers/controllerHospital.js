@@ -12,8 +12,7 @@ class ControllerHospital {
                 if (err) {
                     ViewHospital.displayError(err);
                 } else {
-                    const newEmployee = ModelHospital.createOneEmployee(name, position, username, password);
-                    data.push(newEmployee);
+                    data.push(ModelHospital.createOneEmployee(name, position, username, password));
                     ModelHospital.createAll('employee', data, (err) => {
                         if (err) {ViewHospital.displayError(err);}
                     });
@@ -66,6 +65,8 @@ class ControllerHospital {
                                     if (employee.username == username && employee.password == password) {
                                         system[0].login = true;
                                         system[0].user = employee.name;
+                                        system[0].position = employee.position;
+                                        system[0].timeStamp = Date.now();
                                         ModelHospital.createAll('system', system, (err) => {
                                             if (err) {ViewHospital.displayError(err);}
                                         });
@@ -80,9 +81,36 @@ class ControllerHospital {
                 }
             });
         }
-        
     }
 
+    static addPatient(patientData) {
+        let id = patientData[0];
+        const name = patientData[1];
+        const diagnosis = patientData.slice(2);
+        ModelHospital.findAll('system', (err, data) => {
+            if (err) {
+                ViewHospital.displayError(err);}
+            else {
+                if (data[0].position == 'doctor') {
+                    ModelHospital.findAll('patient', (err, data) => {
+                        if (err) {
+                            ViewHospital.displayError(err);
+                        } else {
+                            id = +data[data.length-1].id + 1;
+                            data.push(ModelHospital.createOnePatient(id, name, diagnosis));
+                            ModelHospital.createAll('patient', data, (err) => {
+                                if (err) {ViewHospital.displayError(err);}
+                            });
+                            ViewHospital.successAddingPatient(data.length);
+                        }
+                    });
+                } else {
+                    ViewHospital.notDoctor();
+                }
+            }
+        });
+    }
+    
     static showHelp() {
         ViewHospital.help();
     }

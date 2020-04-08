@@ -16,6 +16,12 @@ class ViewHospital {
     static wrongUserPass() {
         console.log("Wrong username / password.");
     }
+    static notDoctor() {
+        console.log("Sorry. Only doctor that allowed to input patient data.");
+    }
+    static successAddingPatient(totalPatient) {
+        console.log(`Patient data succesfully added to the list. Total patient now: ${totalPatient} person`)
+    }
     
     static help() {
         console.log("Hospital Interface Commands");

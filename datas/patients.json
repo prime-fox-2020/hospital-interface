@@ -1,7 +1,37 @@
 [
-    {
-      "id": "1",
-      "name": "Riolly",
-      "diagnosis": ["batuk", "pilek", "demam"]
-    }
+  {
+    "id": 1,
+    "name": "Daniel",
+    "diagnosis": [
+      "Abab",
+      "Batuk",
+      "Pilek"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Aristo",
+    "diagnosis": [
+      "Pegal-pegal",
+      "Nyeri",
+      "Gatal"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mananta",
+    "diagnosis": [
+      "Pusing"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Vincent",
+    "diagnosis": [
+      "kurus",
+      "lemas",
+      "letih",
+      "lesu"
+    ]
+  }
 ]
