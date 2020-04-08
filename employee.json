@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "jaka",
+        "position": "dokter",
+        "username": "jaka",
+        "password": "123",
+        "isLogin": false
+    },
+    {
+        "id": 2,
+        "name": "Riko",
+        "position": "admin",
+        "username": "riko",
+        "password": "123",
+        "isLogin": false
+    },
+    {
+        "id": 3,
+        "name": "adi",
+        "position": "receptionist",
+        "username": "adi",
+        "password": "123",
+        "isLogin": false
+    },
+    {
+        "id": 4,
+        "name": "Rinoto",
+        "position": "dokter",
+        "username": "rino",
+        "password": "123",
+        "isLogin": true
+    },
+    {
+        "id": 5,
+        "name": "zuhdi",
+        "position": "admin",
+        "username": "zuhdi",
+        "password": "123",
+        "isLogin": false
+    }
+]
