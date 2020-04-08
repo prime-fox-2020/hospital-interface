@@ -10,19 +10,21 @@ class View {
     static listEmployee(data) {
         console.log('Daftar employee ');
         console.log("=========================");
+        console.log(data);
         
-        for (let i in data) {
-            console.log(`${data[i].id} ${data[i].name}, position: ${data[i].position}`); 
-        }
+        // for (let i in data) {
+        //     console.log(`${data[i].id} ${data[i].name}, position: ${data[i].position}`); 
+        // }
     }
 
     static listPatient(data) {
         console.log('Daftar Patient ');
         console.log("=========================");
+        console.log(data);
         
-        for (let i in data) {
-            console.log(`${data[i].id} ${data[i].name}, diagnosis: ${data[i].diagnosis}`); 
-        }
+        // for (let i in data) {
+        //     console.log(`${data[i].id} ${data[i].name}, diagnosis: ${data[i].diagnosis}`); 
+        // }
     }
     
     static registerEmployee(data) {

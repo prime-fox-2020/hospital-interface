@@ -1,42 +1,42 @@
 [
    {
       "id": 1,
-      "name": "adam",
-      "position": "dokter",
-      "username": "adamagustinus",
-      "password": "123456",
+      "name": "anita",
+      "position": "receptionist",
+      "username": "anitabattleangle",
+      "password": "anita94",
       "is_login": false
    },
    {
       "id": 2,
-      "name": "susilo",
+      "name": "adam",
       "position": "dokter",
-      "username": "ncusilohartomo",
-      "password": "2343ddsd",
-      "is_login": true
+      "username": "agustinusadam",
+      "password": "adam020394",
+      "is_login": false
    },
    {
       "id": 3,
-      "name": "akmalia",
-      "position": "receptionist",
-      "username": "akmalia234",
-      "password": "2343d3433",
+      "name": "susilo",
+      "position": "admin",
+      "username": "susilohar",
+      "password": "ncus123456",
       "is_login": false
    },
    {
       "id": 4,
-      "name": "sukirman",
+      "name": "asep",
       "position": "office boy",
-      "username": "sukir12",
-      "password": "sukirmannakal12",
+      "username": "asepkornelo22",
+      "password": "asep123",
       "is_login": false
    },
    {
       "id": 5,
-      "name": "erik",
-      "position": "admin",
-      "username": "erik94",
-      "password": "098765",
+      "name": "hamzah",
+      "position": "programmer",
+      "username": "hamzah5566",
+      "password": "hamzah123456999",
       "is_login": false
    }
 ]

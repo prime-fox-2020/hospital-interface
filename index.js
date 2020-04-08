@@ -1,6 +1,9 @@
 const Controller = require('./Controller/controller.js')
 let command_1 = process.argv[2]
 let params = process.argv.slice(3)
+console.log(command_1);
+console.log(params);
+
 
 switch (command_1) {
     case 'help':

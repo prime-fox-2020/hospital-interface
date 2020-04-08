@@ -47,5 +47,15 @@
          "batuk",
          "demam rendah"
       ]
+   },
+   {
+      "id": 6,
+      "name": "aldiansyah",
+      "diagnosis": [
+         "batuk",
+         "demam",
+         "pilek",
+         "mencret"
+      ]
    }
 ]

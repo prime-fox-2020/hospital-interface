@@ -1,5 +1,10 @@
 const fs = require('fs')
-const Employee  = require('./model-employee')
+const Employee = require('./model-employee.js')
+const Doctor  = require('./model-doctor.js')
+const Receptionist  = require('./model-receptionist.js')
+const OfficeBoy  = require('./model-office-boy.js')
+const Admin  = require('./model-admin.js')
+
 const Patient  = require('./model-patient')
 
 class Model {
@@ -26,7 +31,17 @@ class Model {
         const dataParse = JSON.parse(data)
         const dataConvert = []
         for (let i in dataParse) {
-          dataConvert.push(new Employee(dataParse[i].id, dataParse[i].name, dataParse[i].position, dataParse[i].username, dataParse[i].password, dataParse[i].is_login))
+          if (dataParse[i].position == "dokter") {
+            dataConvert.push(new Doctor(dataParse[i].id, dataParse[i].name, dataParse[i].position, dataParse[i].username, dataParse[i].password, dataParse[i].is_login))
+          } else if (dataParse[i].position == "receptionist") {
+            dataConvert.push(new Receptionist(dataParse[i].id, dataParse[i].name, dataParse[i].position, dataParse[i].username, dataParse[i].password, dataParse[i].is_login))
+          } else if (dataParse[i].position == "admin") {
+            dataConvert.push(new Admin(dataParse[i].id, dataParse[i].name, dataParse[i].position, dataParse[i].username, dataParse[i].password, dataParse[i].is_login))
+          } else if (dataParse[i].position == "office boy") {
+            dataConvert.push(new OfficeBoy(dataParse[i].id, dataParse[i].name, dataParse[i].position, dataParse[i].username, dataParse[i].password, dataParse[i].is_login))
+          } else {
+            dataConvert.push(new Employee(dataParse[i].id, dataParse[i].name, dataParse[i].position, dataParse[i].username, dataParse[i].password, dataParse[i].is_login))
+          }
         }
         callback(null, dataConvert)
       }
@@ -60,7 +75,18 @@ class Model {
         } else {
           newId = dataParse[dataParse.length - 1].id + 1
         }
-        dataParse.push(new Employee(newId, arrInfos[0], arrInfos[1], arrInfos[2], arrInfos[3]))
+
+        if (arrInfos[1] == "dokter") {
+          dataParse.push(new Doctor(newId, arrInfos[0], arrInfos[1], arrInfos[2], arrInfos[3]))
+        } else if (arrInfos[1] == "admin") {
+          dataParse.push(new Admin(newId, arrInfos[0], arrInfos[1], arrInfos[2], arrInfos[3]))
+        } else if (arrInfos[1] == "office boy") {
+          dataParse.push(new OfficeBoy(newId, arrInfos[0], arrInfos[1], arrInfos[2], arrInfos[3]))
+        } else if (arrInfos[1] == "receptionist") {
+          dataParse.push(new Receptionist(newId, arrInfos[0], arrInfos[1], arrInfos[2], arrInfos[3]))
+        } else {
+          dataParse.push(new Employee(newId, arrInfos[0], arrInfos[1], arrInfos[2], arrInfos[3]))
+        }
         fs.writeFile('./data/employee.json', JSON.stringify(dataParse, null, 3), function(error) {
           if (error) {
             callback(error, null)
