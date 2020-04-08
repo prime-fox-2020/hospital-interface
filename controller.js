@@ -17,7 +17,10 @@ class Controller {
   static register (name, position, username, password){
     Model.Employee.register(name, position, username, password)
   }
-  
+
+  static addPatient (id, name, diagnosis){
+    Model.Patient.addPatient(id, name, diagnosis)
+  }
 }
 
 module.exports = Controller

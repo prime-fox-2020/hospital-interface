@@ -1,1 +1,7 @@
-[]
+[
+    {
+        "ID": "1",
+        "name": "samplesick",
+        "diagnosis": "covid-19"
+    }
+]

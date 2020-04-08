@@ -9,11 +9,34 @@ class Patient {
     this.diagnosis = diagnosis
   }
 
-  static dataEmployee(){
+  static dataPatient(){
     let alpha = fs.readFileSync('./patient.json','utf8')
     let beta = JSON.parse(alpha)
 
     return beta
+  }
+
+  static addPatient (id, name, diagnosis){
+    let dataPatients = Patient.dataPatient()
+    let dataEmployee = Employee.dataEmployee()
+    let checkLogin = false
+    for (let i = 0; i < dataEmployee.length; i++){
+      if (dataEmployee[i].position == 'doctor' && dataEmployee[i].login == true){
+        checkLogin = true
+      }
+    }
+    if (checkLogin == true){
+      dataPatients.push({
+        ID: id,
+        name: name,
+        diagnosis: diagnosis
+      })
+      console.log(`Data pasien berhasil ditambahkan. Total data pasien: ${dataPatients.length}`)
+    } else {
+        console.log(`Tidak memiliki akses untuk add patient`)
+    }
+    let newData = JSON.stringify(dataPatients, null, 4)
+    fs.writeFileSync('./patient.json',newData)
   }
 }
 

@@ -1,10 +1,10 @@
 [
     {
         "ID": 0,
-        "name": "sample",
+        "name": "sample1",
         "position": "doctor",
-        "username": "sampleid",
-        "password": "samplepass",
+        "username": "sample1id",
+        "password": "sample1pass",
         "login": false
     },
     {
