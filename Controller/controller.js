@@ -28,7 +28,7 @@ class Controller {
             }
         })
     }
-
+    
     static login(params) {
         Model.login(params, (error, success , data) => {
             if (error) {
@@ -38,7 +38,7 @@ class Controller {
             }
         })
     }
-
+    
     static logout() {
         Model.logout((error, success , data) => {
             if (error) {
@@ -48,13 +48,22 @@ class Controller {
             }
         })
     }
-
+    
     static addPatient(params) {
         Model.addPatient(params, (error ,data) => {
             if (error) {
                 View.err(error)
             } else {
                 View.message(data)
+            }
+        })
+    }
+    static showPatient(){
+        Model.listPatient((err, data) => {
+            if (err) {
+                View.message(err)
+            } else {
+                View.showList(data)
             }
         })
     }

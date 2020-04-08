@@ -22,6 +22,9 @@ switch (command) {
     case 'addPatient':
         Controller.addPatient(params)
         break;
+    case 'listPatient':
+        Controller.showPatient()
+        break
 
     default:
         Controller.default()

@@ -19,5 +19,14 @@
     "diagnosis": [
       "demam"
     ]
+  },
+  {
+    "id": 4,
+    "name": "joko",
+    "diagnosis": [
+      "batuk",
+      "demam",
+      "pusing"
+    ]
   }
 ]

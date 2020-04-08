@@ -227,6 +227,20 @@ class Model {
     })
   }
 
+  static listPatient(callback){
+    this.read('./data/patients.json', (err, data) => {
+      if (err) {
+        callback(err, null)
+      } else {
+        const newPatient = []
+        for (let i = 0; i < data.length; i++) {
+          newPatient.push(new Patient(data[i].id, data[i].name, data[i].diagnosis))
+        }
+        callback(err, newPatient)
+      }
+    })
+  }
+
   static addPatient(params, callback) {
     this.read('./data/employee.json', (err, data) => {
       if (err) {
