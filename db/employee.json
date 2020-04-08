@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "name": "admin",
+    "position": "admin",
+    "username": "admin",
+    "password": "admin"
+  },
+  {
+    "id": 2,
+    "name": "Frankie Hoppner",
+    "position": "dokter",
+    "username": "fhoppner0",
+    "password": "ZFhMi0U"
+  }, {
+    "id": 3,
+    "name": "Gareth Hattam",
+    "position": "admin",
+    "username": "ghattam1",
+    "password": "3ZfRTJ26nN"
+  }, {
+    "id": 4,
+    "name": "Leonore Abela",
+    "position": "officeboy",
+    "username": "labela2",
+    "password": "Et7vEHfiB"
+  }, {
+    "id": 5,
+    "name": "Luciana Gatling",
+    "position": "dokter",
+    "username": "lgatling3",
+    "password": "5l7BBHZd"
+  }, {
+    "id": 6,
+    "name": "Burlie Borris",
+    "position": "dokter",
+    "username": "bborris4",
+    "password": "GGw3t5aw"
+  }, {
+    "id": 7,
+    "name": "Christos Elijahu",
+    "position": "dokter",
+    "username": "celijahu5",
+    "password": "Uac8YImMhaN"
+  }, {
+    "id": 8,
+    "name": "Manny Tempest",
+    "position": "admin",
+    "username": "mtempest6",
+    "password": "jmr7A2BwDf3"
+  }, {
+    "id": 9,
+    "name": "Janifer Jopling",
+    "position": "resepsionis",
+    "username": "jjopling7",
+    "password": "wHnJPuKy"
+  }, {
+    "id": 10,
+    "name": "Demetris Pawelek",
+    "position": "admin",
+    "username": "dpawelek8",
+    "password": "8HSyjn"
+  }, {
+    "id": 11,
+    "name": "Rosana Berford",
+    "position": "dokter",
+    "username": "rberford9",
+    "password": "IhpdUh47poOp"
+  }
+]

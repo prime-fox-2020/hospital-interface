@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Rosamund Pike",
+    "diagnosis": [
+      "batuk",
+      "temp: 37.5C",
+      "sedikit pusing",
+      "mual"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Tom Cruise",
+    "diagnosis": [
+      "flu",
+      "temp: 37.5C",
+      "pusing",
+      "mual",
+      "sendi nyeri"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Zoey Cabana",
+    "diagnosis": [
+      "diare akut"
+    ]
+  }
+]
