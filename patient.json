@@ -1,0 +1,17 @@
+[
+    {
+        "ID": 1,
+        "name": "samplesick1",
+        "diagnosis": "covid-19"
+    },
+    {
+        "ID": 2,
+        "name": "samplesick2",
+        "diagnosis": "covid-20"
+    },
+    {
+        "ID": 3,
+        "name": "samplesick3",
+        "diagnosis": "miskin"
+    }
+]
