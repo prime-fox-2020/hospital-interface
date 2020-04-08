@@ -1,37 +1,37 @@
 [
-    {
-        "nama": "Nur Habib",
-        "position": "dokter",
-        "username": "mercen1",
-        "password": "123456",
-        "login": false
-    },
-    {
-        "nama": "fahri",
-        "position": "dokter",
-        "username": "fahriuser",
-        "password": "11111",
-        "login": false
-    },
-    {
-        "nama": "joni",
-        "position": "admin",
-        "username": "jonijoni",
-        "password": "2222",
-        "login": false
-    },
-    {
-        "nama": "hendrik",
-        "position": "receptionist",
-        "username": "hendrik1234",
-        "password": "12345",
-        "login": false
-    },
-    {
-        "nama": "roni vallen",
-        "position": "office boy",
-        "username": "ronironi11",
-        "password": "2222",
-        "login": false
-    }
+  {
+    "nama": "Habib",
+    "position": "dokter",
+    "username": "mercen1",
+    "password": "123456",
+    "login": false
+  },
+  {
+    "nama": "fahri",
+    "position": "dokter",
+    "username": "fahriuser",
+    "password": "11111",
+    "login": false
+  },
+  {
+    "nama": "joni",
+    "position": "admin",
+    "username": "jonijoni",
+    "password": "2222",
+    "login": false
+  },
+  {
+    "nama": "hendrik",
+    "position": "receptionist",
+    "username": "hendrik1234",
+    "password": "12345",
+    "login": false
+  },
+  {
+    "nama": "vallen",
+    "position": "office boy",
+    "username": "ronironi11",
+    "password": "2222",
+    "login": false
+  }
 ]

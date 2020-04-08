@@ -14,6 +14,20 @@ class Controllers{
         view.login(username,password)
     }
 
+    static register(params){
+        if(params[0] && params[1] && params[2] && params[3]){
+            modelEmployee.register(params,(err,data)=>{
+                if(err){
+                    view.printError()
+                }else{
+                    view.printSucces(data)
+                }
+            })
+        }else{
+            view.registerSalah()
+        }
+    }
+
 }
 
 
