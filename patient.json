@@ -2,49 +2,16 @@
   {
     "id": 1,
     "name": "sanji",
-    "diagnosis": [
-      "corona",
-      "demam"
-    ]
+    "diagnosis": "corona, demam"
   },
   {
     "id": 2,
     "name": "zorro",
-    "diagnosis": [
-      "batuk",
-      "demam"
-    ]
+    "diagnosis": "batuk, demam"
   },
   {
     "id": 3,
-    "name": "zorro",
-    "diagnosis": [
-      "batuk",
-      "demam"
-    ]
-  },
-  {
-    "id": 4,
-    "name": "zorro",
-    "diagnosis": [
-      "batuk",
-      "demam"
-    ]
-  },
-  {
-    "id": 5,
-    "name": "zorro",
-    "diagnosis": [
-      "batuk",
-      "demam"
-    ]
-  },
-  {
-    "id": 6,
-    "name": "zorro",
-    "diagnosis": [
-      "batuk",
-      "demam"
-    ]
+    "name": "asd",
+    "diagnosis": "asd, asdasd, asda, asd"
   }
 ]

@@ -5,7 +5,7 @@
     "username": "luffy",
     "password": "12345",
     "position": "dokter",
-    "status": false
+    "status": true
   },
   {
     "id": 2,

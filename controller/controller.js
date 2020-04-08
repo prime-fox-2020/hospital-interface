@@ -1,5 +1,5 @@
-const View = require('./view')
-const Model = require('./model/model')
+const View = require('../view/view')
+const Model = require('../model/model')
 
 class Controller {
   static help() {

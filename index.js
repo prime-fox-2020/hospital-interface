@@ -1,4 +1,4 @@
-const Controller = require('./controller')
+const Controller = require('./controller/controller')
 
 const argv = process.argv.slice(2)
 const command = argv[0]
@@ -22,3 +22,4 @@ switch (command) {
 // $ node index.js register <your name> <username> <password> <position>
 // $ node index.js login <username> <password>
 // $ node index.js addPatient <patient name> <diagnosis>
+// $ node index.js logout

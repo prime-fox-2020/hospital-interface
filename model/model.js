@@ -156,7 +156,7 @@ class Model {
               data.push({
                 id : newId,
                 name: params[0],
-                diagnosis: params.slice(1)
+                diagnosis: params.slice(1).join(', ')
               })
               this.savePatient(data, (err)=>{
                 if (err){

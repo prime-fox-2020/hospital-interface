@@ -1,3 +1,7 @@
-node index.js help
-node index.js listEmployee
-node index.js register tubagus zuhdi 1234 dokter
+
+$ node index.js help
+$ node index.js listEmployee
+$ node index.js register <your name> <username> <password> <position>
+$ node index.js login <username> <password>
+$ node index.js addPatient <patient name> <diagnosis>
+$ node index.js logout
