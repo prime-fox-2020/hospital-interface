@@ -15,15 +15,7 @@ class View {
         console.table(data)
     }
 
-    static err(error) {
-        console.log(error);
-    }
-
     static message(message) {
-        console.log(message);
-    }
-    
-    static login(message) {
         console.log(message);
     }
 }

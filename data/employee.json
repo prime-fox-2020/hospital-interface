@@ -38,5 +38,13 @@
     "username": "din",
     "password": "1234",
     "loginStatus": "logout"
+  },
+  {
+    "id": 6,
+    "name": "ruli",
+    "position": "admin",
+    "username": "ruli",
+    "password": "asdf",
+    "loginStatus": "logout"
   }
 ]

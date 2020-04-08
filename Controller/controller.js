@@ -20,9 +20,9 @@ class Controller {
         })
     }
     static register(params) {
-        Model.register(params, (error, data) => {
-            if (error) {
-                View.err(error)
+        Model.register(params, (err, data) => {
+            if (err) {
+                View.message(err)
             } else {
                 View.message(data)
             }
@@ -30,29 +30,29 @@ class Controller {
     }
     
     static login(params) {
-        Model.login(params, (error, success , data) => {
-            if (error) {
-                View.err(error)
+        Model.login(params, (err, data) => {
+            if (err) {
+                View.message(err)
             } else {
-                View.login(success, data)
+                View.message(data)
             }
         })
     }
     
     static logout() {
-        Model.logout((error, success , data) => {
-            if (error) {
-                View.err(error)
+        Model.logout((err, data) => {
+            if (err) {
+                View.message(err)
             } else {
-                View.login(success, data)
+                View.message(data)
             }
         })
     }
     
     static addPatient(params) {
-        Model.addPatient(params, (error ,data) => {
-            if (error) {
-                View.err(error)
+        Model.addPatient(params, (err ,data) => {
+            if (err) {
+                View.message(err)
             } else {
                 View.message(data)
             }
