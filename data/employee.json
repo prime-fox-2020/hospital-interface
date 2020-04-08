@@ -13,7 +13,7 @@
     "position": "dokter",
     "username": "rul",
     "password": "1234",
-    "loginStatus": "login"
+    "loginStatus": "logout"
   },
   {
     "id": 3,
@@ -37,14 +37,6 @@
     "position": "receptionist",
     "username": "din",
     "password": "1234",
-    "loginStatus": "logout"
-  },
-  {
-    "id": 6,
-    "name": "ruli",
-    "position": "admin",
-    "username": "ruli",
-    "password": "asdf",
     "loginStatus": "logout"
   }
 ]

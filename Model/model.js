@@ -211,7 +211,7 @@ class Model {
         for (let i = 0; i < data.length; i++) {
           data[i].loginStatus = 'logout'
           logout = true
-          message = `user ${data[i].username} has been successfully logout!`
+          message = `user has been successfully logout!`
         }
         if (!logout) {
           message = 'Dont have any one login!'
