@@ -26,5 +26,9 @@ switch (command) {
         controller.logout();
         break;
     }
+    default : {
+        controller.default();
+        break;
+    }
 
 }

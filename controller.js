@@ -4,6 +4,11 @@ const Model = require('./model');
 const View = require('./view');
 
 class Controller {
+    
+    static default() {
+        View.default();
+    }
+    
     static login(params) {
         Model.login(params, (err, message)=>{
             if (err) View.showError(err);

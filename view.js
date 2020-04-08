@@ -15,6 +15,10 @@ class View {
     static showError(message) {
         console.log(message);
     }
+
+    static default() {
+        console.log('unknown command!\n- list\n- register\n- addPatient\n- login\n- logout');
+    }
 }
 
 module.exports = View;
