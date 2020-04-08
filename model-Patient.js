@@ -13,9 +13,9 @@ class Patient {
         callback(err,null)
       }else{
         const dataParse = JSON.parse(data)
-        
+        let newId = dataParse[dataParse.length-1].id +1
         dataParse.push({
-          id: Number(params[0]),
+          id: newId,
           nama: params[1],
           diagnosis: params.slice(2).join(' ')
         })

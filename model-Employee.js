@@ -7,6 +7,7 @@ class Employee {
     this.username = username
     this.password = password
     this.login = login
+    this.id = null
   }
 
   static register(params,callback){
@@ -15,14 +16,18 @@ class Employee {
       if(err){
         callback(err,null)
       }else{
-        const dataParse = JSON.parse(data)
+
         
+        const dataParse = JSON.parse(data)
+
+        let newId = dataParse[dataParse.length-1].id +1
         dataParse.push({
         nama: params[0],
         position: params[3],
         username: params[1],
         password: params[2],
-        login: false
+        login: false,
+        id:newId
         })
         
         const dataStringfy = JSON.stringify(dataParse,null,2)

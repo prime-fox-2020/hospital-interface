@@ -4,34 +4,47 @@
     "position": "dokter",
     "username": "mercen1",
     "password": "123456",
-    "login": false
+    "login": true,
+    "id": 1
   },
   {
     "nama": "fahri",
     "position": "dokter",
     "username": "fahriuser",
     "password": "11111",
-    "login": false
+    "login": false,
+    "id": 2
   },
   {
     "nama": "joni",
     "position": "admin",
     "username": "jonijoni",
     "password": "2222",
-    "login": false
+    "login": false,
+    "id": 3
   },
   {
     "nama": "hendrik",
     "position": "receptionist",
     "username": "hendrik1234",
     "password": "12345",
-    "login": false
+    "login": false,
+    "id": 4
   },
   {
     "nama": "vallen",
     "position": "office boy",
     "username": "ronironi11",
     "password": "2222",
-    "login": false
+    "login": false,
+    "id": 5
+  },
+  {
+    "nama": "habib",
+    "position": "direktur",
+    "username": "mercen2",
+    "password": "hahahah",
+    "login": false,
+    "id": 6
   }
 ]
