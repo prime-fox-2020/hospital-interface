@@ -30,6 +30,24 @@ class Employee {
       }
     })
   }
+
+  static login(objLogin, callback) {
+    fs.readFile('./employee.json', 'utf8', (err, data) => {
+      if (err) {
+        console.log(err);
+      }
+      else {
+        let fetchData = JSON.parse(data)
+        for (var i = 0; i < fetchData.length; i++) {
+          if (objLogin['username'] === fetchData[i]['username'] && objLogin['password'] === fetchData[i]['password']) {
+            callback(true, objLogin)
+            return
+          }
+        }
+        callback(false, objLogin)
+      }
+    })
+  }
 }
 
 module.exports = Employee 
