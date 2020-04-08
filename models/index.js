@@ -6,7 +6,7 @@ const PatientFile = './db/patient.json';
 const SessionFile = './db/session.json';
 
 class Patient {
-  constructor(id, name, diagnosis) {
+  constructor(id, name, diagnosis = []) {
     this.id = id
     this.name = name
     this.diagnosis = diagnosis
@@ -67,7 +67,7 @@ class Crud {
   }
 
   /* 
-  * login & session checking
+  * login, logout & session checking
   */
 
   static inSession = (username, callback) => {
@@ -75,11 +75,7 @@ class Crud {
       if (err) {
         callback(true, err)
       } else {
-        data.forEach(element => {
-          if (element.user == username) {
-            callback(true, element.user)
-          }
-        })
+        callback(false, data)
       }
     })
   }
@@ -92,6 +88,37 @@ class Crud {
       callback(false, userExist[0])
     } else {
       callback(true, null)
+    }
+  }
+
+  static destroy(callback) {
+    this.pool('session', (error, data) => {
+      const user = data.pop();
+      this.writeFile('session', [])
+      callback(false, user.user)
+    })
+  }
+
+  /* 
+  * CRUD in action
+  */
+
+  static newData = (db, content, callback) => {
+
+    console.log(content)
+
+    switch (true) {
+      case content.hasOwnProperty('username') : {
+
+        db.push(content);
+        this.writeFile('employee', db)
+      
+      }; break;
+
+      default: {
+        db.push(content);
+        this.writeFile('patient', db)
+      }
     }
   }
 }

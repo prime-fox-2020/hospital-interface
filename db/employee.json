@@ -1,9 +1,23 @@
 [
-    {
-        "id":"1",
-        "name":"admin",
-        "position":"admin",
-        "username":"admin",
-        "password":"admin"
-    }
+  {
+    "id": "1",
+    "name": "admin",
+    "position": "admin",
+    "username": "admin",
+    "password": "admin"
+  },
+  {
+    "id": 2,
+    "name": "suryo",
+    "position": "dokter",
+    "username": "yoyok",
+    "password": "yoyok"
+  },
+  {
+    "id": 3,
+    "name": "Dr Indra",
+    "position": "dokter",
+    "username": "indra",
+    "password": "indra"
+  }
 ]
