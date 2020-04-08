@@ -23,20 +23,22 @@ class Patient {
     this._diagnosis = diagnosis
   }
 
-  static createOne([id, name, ...diagnosis], callback) {
+  static createOne([name, ...diagnosis], callback) {
     fs.readFile('./data/employee.json', 'utf8', (err, data) => {
       if (err) {
         callback(err, `Server unreachable`)
       } else {
         const employees = JSON.parse(data)
-        const findUserLogin = employees.findIndex(user => user._isLogin)
-        if (findUserLogin >= 0 && employees[findUserLogin]._position._isDoctor) {
+        const findUserLogin = employees.findIndex(user => user.isLogin)
+        if (findUserLogin >= 0 && employees[findUserLogin].position === 'dokter') {
           fs.readFile('./data/patient.json', 'utf8', (err, data) => {
             if (err) {
               callback(err, `Server unreachable`)
             } else {
               const patients = JSON.parse(data)
-              patients.push(new Patient(id, name, diagnosis.join(' ')))
+              let id
+              patients.length ? id = patients[patients.length - 1].id + 1 : id = 1
+              patients.push({id, name, diagnosis: diagnosis.join(' ')})
 
               fs.writeFile('./data/patient.json', JSON.stringify(patients, null, 2), err => {
                 if (err) {

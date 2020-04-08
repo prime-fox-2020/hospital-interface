@@ -1,22 +1,26 @@
 [
   {
-    "_name": "Mas.Slameet",
-    "_position": {
-      "_isDoctor": true,
-      "_name": "Dokter"
-    },
-    "_username": "slamet",
-    "_password": "sugeng",
-    "_isLogin": true
+    "id": 1,
+    "name": "Susilo",
+    "username": "susilo",
+    "password": "asd",
+    "position": "dokter",
+    "isLogin": false
   },
   {
-    "_name": "Mas.Joko",
-    "_position": {
-      "_isDoctor": false,
-      "_name": "Admin"
-    },
-    "_username": "joko",
-    "_password": "sugeng",
-    "_isLogin": false
+    "id": 2,
+    "name": "Susanto",
+    "username": "susanto",
+    "password": "asd",
+    "position": "dokter",
+    "isLogin": false
+  },
+  {
+    "id": 3,
+    "name": "Susanti",
+    "username": "susanti",
+    "password": "asd",
+    "position": "dokter",
+    "isLogin": false
   }
 ]

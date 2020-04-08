@@ -5,12 +5,9 @@ const OfficeBoy = require('./OfficeBoy')
 const fs = require('fs')
 
 class Employee {
-  constructor([name, username, password, position]) {
+  constructor([name, position]) {
     this._name = name
     this._position = this.positionSelector(position)
-    this._username = username
-    this._password = password
-    this._isLogin = false
   }
 
   get name() {
@@ -55,55 +52,57 @@ class Employee {
       if (err) {
         callback(err, `Server unreachable`)
       } else {
-        const employees = JSON.parse(data).map(el => {
-          let position = el._position._name.toLowerCase().replace(' ','-')
-          return new Employee([el._name, null, null, position])
-        })
+        const employees = JSON.parse(data)
+          .map(el => {
+            return new Employee([el.name, el.position])
+          })
         callback(null, employees)
       }
     })
   }
 
-  static login(params, callback) {
+  static login([username, password], callback) {
     fs.readFile('./data/employee.json', 'utf8', (err, data) => {
       if (err) {
         callback(err, `Server unreachable`)
       } else {
         const employees = JSON.parse(data)
-        const findUserLogin = employees.findIndex(user => user._isLogin === true)
-        const userIndex = employees.findIndex(user => user._username === params[0] && user._password === params[1])
+        const findUserLogin = employees.findIndex(user => user.isLogin === true)
+        const userIndex = employees.findIndex(user => user.username === username && user.password === password)
         if (findUserLogin < 0) {
           if (userIndex < 0) {
             callback(null, `username / password wrong`)
           } else {
-            employees[userIndex]._isLogin = true
+            employees[userIndex].isLogin = true
             fs.writeFile('./data/employee.json', JSON.stringify(employees, null, 2), err => {
               if (err) {
                 callback(err, `Cant save data employee`)
               } else {
-                callback(null, `User ${params[0]} logged in successfully`)
+                callback(null, `User ${username} logged in successfully`)
               }
             })
           }
         } else {
-          callback(null, `${employees[findUserLogin]._name} is still login. He / She need to logout first!`)
+          callback(null, `${employees[findUserLogin].name} is still login. He / She need to logout first!`)
         }
       }
     })
   }
 
-  static createOne(params, callback) {
+  static createOne([name, username, password, position], callback) {
     fs.readFile('./data/employee.json', 'utf8', (err, data) => {
       if (err) {
         callback(err, `Server unreachable`)
       } else {
         const employees = JSON.parse(data)
-        employees.push(new Employee(params))
+        let id
+        employees.length ? id = employees[employees.length - 1].id + 1 : id = 1
+        employees.push({ id, name, username, password, position, isLogin: false})
         fs.writeFile('./data/employee.json', JSON.stringify(employees, null, 2), err => {
           if (err) {
             callback(err, `Cant save data`)
           } else {
-            callback(null, `Save data success { username: ${params[1]}, role: ${params[3]} }. Total employees: ${employees.length}`)
+            callback(null, `Save data success { username: ${username}, role: ${position} }. Total employees: ${employees.length}`)
           }
         })
       }
