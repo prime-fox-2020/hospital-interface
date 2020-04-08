@@ -37,6 +37,39 @@ class Employee {
     })
   }
 
+  static login(params,callback){
+    
+    fs.readFile(`./employee.json`,'utf-8', (err,data)=>{
+      if(err){
+        callback(err,null)
+      }else{
+
+        const dataParse = JSON.parse(data)
+        let cek = false
+        
+        for (let i = 0; i < dataParse.length; i++) {
+          if(params[0] == dataParse[i].username && params[1] == dataParse[i].password){
+            dataParse[i].login = true
+            cek = true
+          }
+        }
+        if(cek == false){
+          callback(null,`Username / Password wrong`)
+        }else{
+          const dataStringfy = JSON.stringify(dataParse,null,2)
+          fs.writeFile(`./employee.json`,dataStringfy,(err)=>{
+            if(err){
+              callback(err,null)
+            }else{
+              callback(null,`user ${params[0]} logged is successfully`)
+            }
+          })
+        }
+      }
+    })
+
+  }
+
 
 
 }

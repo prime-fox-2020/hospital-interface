@@ -10,9 +10,9 @@ class Controllers{
         view.listHelp()
     }
 
-    static login(username,password){
-        view.login(username,password)
-    }
+    // static login(username,password){
+    //     view.login(username,password)
+    // }
 
     static register(params){
         if(params[0] && params[1] && params[2] && params[3]){
@@ -27,6 +27,17 @@ class Controllers{
             view.registerSalah()
         }
     }
+
+    static login(params){
+        modelEmployee.login(params,(err,data)=>{
+            if(err){
+                view.printError()
+            }else{
+                view.printSucces(data)
+            }
+        })
+    }
+
 
 }
 

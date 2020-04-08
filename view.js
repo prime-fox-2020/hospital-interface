@@ -12,14 +12,6 @@ class View {
 
     }
 
-    static login(username,password){
-        if(username && password){
-            console.log(`selamat login ${username}`)
-        }else{
-            console.log(`masukan username dan password`)
-        }
-    }
-
     static registerSalah (){
         console.log(`Format Salah !, Input :$node index.js register <namaPanggilan> <username> <password> <potition>`)
 
@@ -30,7 +22,7 @@ class View {
     }
 
     static printError(){
-        console.log(`ada eror`)
+        console.log(`any eror`)
     }
 
 
