@@ -1,0 +1,18 @@
+[
+    {
+        "ID": 0,
+        "name": "sample",
+        "position": "doctor",
+        "username": "sampleid",
+        "password": "samplepass",
+        "login": false
+    },
+    {
+        "ID": 1,
+        "name": "sample2",
+        "position": "admin",
+        "username": "sample2id",
+        "password": "sample2pass",
+        "login": false
+    }
+]
