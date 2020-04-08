@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "zeke",
+    "position": "admin",
+    "username": "zetra14",
+    "password": "zekeputra",
+    "logged_in": false
+  },
+  {
+    "id": 2,
+    "name": "rizqa",
+    "position": "dokter",
+    "username": "rizqaAA",
+    "password": "rizqa123",
+    "logged_in": false
+  },
+  {
+    "id": 3,
+    "name": "vinita",
+    "position": "suster",
+    "username": "vinitahey",
+    "password": "vinividivici",
+    "logged_in": false
+  },
+  {
+    "id": 4,
+    "name": "apin",
+    "position": "dokter",
+    "username": "apinipin",
+    "password": "malonshit",
+    "logged_in": false
+  }
+]

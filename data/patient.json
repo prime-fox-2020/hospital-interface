@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "puppey",
+    "diagnosis": [
+      "madness",
+      "maldness"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "kuroky",
+    "diagnosis": [
+      "old age",
+      "carpal tunnel"
+    ]
+  }
+]
