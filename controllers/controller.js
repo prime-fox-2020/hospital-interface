@@ -6,8 +6,9 @@ class Controller{
         Model.listEmployee((err, data) => {
             if(err){
                 View.errorMsg();
+            } else {
+                View.listEmployee(data);
             }
-            View.listEmployee(data);
         })
     }
 
@@ -15,8 +16,9 @@ class Controller{
         Model.register(value, (err, data) => {
             if(err){
                 View.errorMsg();
+            } else {
+                View.register(value[0], value[3]);
             }
-            View.register(value[0], value[3]);
         })
     }
 
@@ -24,13 +26,14 @@ class Controller{
         Model.login(username_password, (err, data) => {
             if(err){
                 View.errorMsg()
+            } else {
+                if(typeof data === 'string'){
+                    View.login(data);
+                } else {
+                    View.login(username_password);
+                }
             }
 
-            if(typeof data === 'string'){
-                View.login(data);
-            } else {
-                View.login(username_password);
-            }
         })
     }
 
@@ -38,13 +41,14 @@ class Controller{
         Model.addPatient(patient, (err, data) => {
             if(err){
                 View.errorMsg();
+            } else {
+                if(typeof data === 'string'){
+                    View.addPatient(data);
+                } else {
+                    View.addPatient(patient);
+                }
             }
 
-            if(typeof data === 'string'){
-                View.addPatient(data);
-            } else {
-                View.addPatient(patient);
-            }
         })
     }
 
@@ -52,9 +56,9 @@ class Controller{
         Model.logout((err, data) => {
             if(err){
                 View.errorMsg();
+            } else {
+                View.logout();
             }
-
-            View.logout();
         })
     }
 }

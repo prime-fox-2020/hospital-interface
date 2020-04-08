@@ -8,9 +8,10 @@ class Model{
         fs.readFile('./data/employee.json', 'utf-8', (err, data) => {
             if(err){
               cb(err, null)
+            } else {
+              data = JSON.parse(data);
+              cb(null, data);
             }
-            data = JSON.parse(data);
-            cb(null, data);
         })
     }
 
