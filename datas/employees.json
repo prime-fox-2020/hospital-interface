@@ -1,20 +1,30 @@
 [
   {
+    "id": 1,
     "name": "Alberto",
     "position": "admin",
     "username": "adminAlberto",
     "password": "Corona19"
   },
   {
+    "id": 2,
     "name": "Cahyantara",
     "position": "doctor",
     "username": "cahaya",
     "password": "nusantara"
   },
   {
+    "id": 3,
     "name": "Michael",
     "position": "nurse",
     "username": "abab",
     "password": "abadi"
+  },
+  {
+    "id": 4,
+    "name": "Elnatan",
+    "position": "pharmacist",
+    "username": "dwicahyo",
+    "password": "splitfire"
   }
 ]

@@ -9,7 +9,8 @@ class Patient {
 }
 
 class Employee {
-  constructor(name, position, username, password) {
+  constructor(id, name, position, username, password) {
+    this.id = id;
     this.name = name;
     this.position = position;
     this.username = username;
@@ -44,8 +45,8 @@ class ModelHospital {
     });
   }
 
-  static createOneEmployee(name, position, username, password) {
-    return new Employee(name, position, username, password);
+  static createOneEmployee(id, name, position, username, password) {
+    return new Employee(id, name, position, username, password);
   }
 
   static createOnePatient(id, name, diagnosis) {

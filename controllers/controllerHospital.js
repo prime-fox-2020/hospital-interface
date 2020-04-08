@@ -12,7 +12,8 @@ class ControllerHospital {
                 if (err) {
                     ViewHospital.displayError(err);
                 } else {
-                    data.push(ModelHospital.createOneEmployee(name, position, username, password));
+                    const id = data[data.length-1].id + 1
+                    data.push(ModelHospital.createOneEmployee(id, name, position, username, password));
                     ModelHospital.createAll('employee', data, (err) => {
                         if (err) {ViewHospital.displayError(err);}
                     });
@@ -84,9 +85,8 @@ class ControllerHospital {
     }
 
     static addPatient(patientData) {
-        let id = patientData[0];
-        const name = patientData[1];
-        const diagnosis = patientData.slice(2);
+        const name = patientData[0];
+        const diagnosis = patientData.slice(1);
         ModelHospital.findAll('system', (err, data) => {
             if (err) {
                 ViewHospital.displayError(err);}
@@ -96,7 +96,7 @@ class ControllerHospital {
                         if (err) {
                             ViewHospital.displayError(err);
                         } else {
-                            id = +data[data.length-1].id + 1;
+                            const id = data[data.length-1].id + 1;
                             data.push(ModelHospital.createOnePatient(id, name, diagnosis));
                             ModelHospital.createAll('patient', data, (err) => {
                                 if (err) {ViewHospital.displayError(err);}
