@@ -1,5 +1,5 @@
-const Employees = require('./model').Employees
-const View = require('./view')
+const Employees = require('../model/model').Employees
+const View = require('../view/view')
 
 
 class Controller {
@@ -57,7 +57,6 @@ class Controller {
             }
         })
     }
-
 
 }
 

@@ -1,4 +1,4 @@
-const Controller = require('./controller')
+const Controller = require('./controller/controller')
 
 const argv = process.argv.slice(2)
 const command = argv[0]

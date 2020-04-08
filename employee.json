@@ -29,7 +29,7 @@
         "position": "dokter",
         "username": "rino",
         "password": "123",
-        "isLogin": true
+        "isLogin": false
     },
     {
         "id": 5,
@@ -37,6 +37,22 @@
         "position": "admin",
         "username": "zuhdi",
         "password": "123",
+        "isLogin": false
+    },
+    {
+        "id": 6,
+        "name": "Roni",
+        "position": "admin",
+        "username": "roni",
+        "password": "123",
+        "isLogin": false
+    },
+    {
+        "id": 7,
+        "name": "ronald",
+        "position": "dokter",
+        "username": "ronald",
+        "password": "asd",
         "isLogin": false
     }
 ]

@@ -13,5 +13,15 @@
         "id": 3,
         "name": "Rido",
         "diagnosis": "radang, diare"
+    },
+    {
+        "id": 4,
+        "name": "oji",
+        "diagnosis": "DBD"
+    },
+    {
+        "id": 5,
+        "name": "dodi",
+        "diagnosis": "flu"
     }
 ]
