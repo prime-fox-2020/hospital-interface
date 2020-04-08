@@ -67,7 +67,29 @@ class Employee {
         }
       }
     })
+  }
 
+  static cekLogin(callback){
+
+    fs.readFile(`./employee.json`,'utf-8', (err,data)=>{
+      if(err){
+        callback(err,null)
+      }else{
+
+        const dataParse = JSON.parse(data)
+        let cek = false
+        for (let i = 0; i < dataParse.length; i++) {
+          if(dataParse[i].login == true && dataParse[i].position ==`dokter`){
+            callback(null,true)
+            cek = true
+            break;
+          }
+        }
+        if(!cek){
+          callback(null,false)
+        }
+      }
+    })
   }
 
 

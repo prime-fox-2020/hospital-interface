@@ -7,9 +7,10 @@ class View {
             `
             $node index.js
             $node index.js help
+            $node index.js register <namaPanggilan> <username> <password> <potition>
             $node index.js login <username> <password>
+            $node index.js addPatient <id> <name> <task_diagnosis>
             `)
-
     }
 
     static registerSalah (){

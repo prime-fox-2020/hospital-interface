@@ -1,18 +1,22 @@
 [
-    {
-        "id": 1,
-        "nama": "yusuf",
-        "diagnosis": "kanker"
-    },
-    {
-        "id": 2,
-        "nama": "budi",
-        "diagnosis": "batuk"
-    },
-    {
-        "id": 3,
-        "nama": "mira",
-        "diagnosis": "kanker"
-    }
-    
+  {
+    "id": 222,
+    "nama": "yusuf",
+    "diagnosis": "kanker"
+  },
+  {
+    "id": 333,
+    "nama": "budi",
+    "diagnosis": "batuk"
+  },
+  {
+    "id": 444,
+    "nama": "mira",
+    "diagnosis": "kanker"
+  },
+  {
+    "id": 1,
+    "nama": "jaya",
+    "diagnosis": "parah banget"
+  }
 ]
