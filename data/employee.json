@@ -1,0 +1,42 @@
+[
+   {
+      "id": 1,
+      "name": "anita",
+      "position": "receptionist",
+      "username": "anitabattleangle",
+      "password": "anita94",
+      "is_login": false
+   },
+   {
+      "id": 2,
+      "name": "adam",
+      "position": "dokter",
+      "username": "agustinusadam",
+      "password": "adam020394",
+      "is_login": false
+   },
+   {
+      "id": 3,
+      "name": "susilo",
+      "position": "admin",
+      "username": "susilohar",
+      "password": "ncus123456",
+      "is_login": false
+   },
+   {
+      "id": 4,
+      "name": "asep",
+      "position": "office boy",
+      "username": "asepkornelo22",
+      "password": "asep123",
+      "is_login": false
+   },
+   {
+      "id": 5,
+      "name": "hamzah",
+      "position": "programmer",
+      "username": "hamzah5566",
+      "password": "hamzah123456999",
+      "is_login": false
+   }
+]
