@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Zeke",
+    "position": "Doctor",
+    "username": "doctor1",
+    "password": "pass123",
+    "status": true
+  },
+  {
+    "id": 2,
+    "name": "Tonny",
+    "position": "Officeboy",
+    "username": "obkeren",
+    "password": "obe123",
+    "status": false
+  }
+]
