@@ -1,9 +1,12 @@
 class View {
 
-  static successMsg(msg) {
+  static registerErr(msg) {
     console.log(msg)
   }
-  static errorMsg(msg) {
+  static registerSuccess(msg) {
+    console.log(msg)
+  }
+  static loginInfo(msg) {
     console.log(msg)
   }
 }

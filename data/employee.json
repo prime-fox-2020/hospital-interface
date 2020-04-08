@@ -1,65 +1,22 @@
 [
   {
-    "name": "Dr.Joyo",
-    "position": {
-      "isDoctor": false
-    },
-    "username": "joyo",
-    "password": 123456
-  },
-  {
-    "_name": "Dr.Admin",
+    "_name": "Mas.Slameet",
     "_position": {
-      "_isDoctor": false
+      "_isDoctor": true,
+      "_name": "Doktor"
     },
-    "_username": "jMinoyo",
-    "_password": "123456"
-  },
-  {
-    "_name": "Dr.Admin",
-    "_position": {
-      "_isDoctor": false
-    },
-    "_username": "jMinoyo",
-    "_password": "123456"
-  },
-  {
-    "_name": "Dr.Amin",
-    "_position": {
-      "_isDoctor": false,
-      "_name": "Admin"
-    },
-    "_username": "Minoyo",
-    "_password": "123876456"
-  },
-  {
-    "_name": "Dr.Amin",
-    "_position": {
-      "_isDoctor": false,
-      "_name": "Admin"
-    },
-    "_username": "Minoyo",
-    "_password": "123876456",
+    "_username": "slamet",
+    "_password": "sugeng",
     "_isLogin": false
   },
   {
-    "_name": "Dr.Amin",
+    "_name": "Mas.Joko",
     "_position": {
       "_isDoctor": false,
       "_name": "Admin"
     },
-    "_username": "Minoyo",
-    "_password": "123876456",
-    "_isLogin": false
-  },
-  {
-    "_name": "Dr.Amin",
-    "_position": {
-      "_isDoctor": false,
-      "_name": "Admin"
-    },
-    "_username": "Minoyo",
-    "_password": 123876456,
-    "_isLogin": false
+    "_username": "joko",
+    "_password": "sugeng",
+    "_isLogin": true
   }
 ]

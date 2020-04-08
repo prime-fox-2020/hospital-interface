@@ -6,18 +6,18 @@ class Controller {
   static register(params) {
     Employee.createOne(params, (err, msg) => {
       if (err)
-        View.errorMsg(msg)
+        View.registerErr(msg)
       else
-        View.successMsg(msg)
+        View.registerSuccess(msg)
     })
   }
 
-  static login() {
+  static login(params) {
     Employee.login(params, (err, msg) => {
       if (err)
-        View.errorMsg(msg)
+        View.loginErr(msg)
       else
-        View.successMsg(msg)
+        View.loginInfo(msg)
     })
   }
 }
