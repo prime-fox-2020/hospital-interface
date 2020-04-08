@@ -1,4 +1,11 @@
 class View{
+    static errorMsg(){
+        console.log('XXXXXXXXXXXXXXXXXX');
+        console.log('=-=-=-ERROR-=-=-=');
+        console.log('Seems you have something wrong....');
+        console.log('XXXXXXXXXXXXXXXXXX');
+    }
+
     static listEmployee(instance){
         instance.forEach(e => {
             console.log(e);

@@ -5,7 +5,7 @@ class Controller{
     static listEmployee(){
         Model.listEmployee((err, data) => {
             if(err){
-                throw err;
+                View.errorMsg();
             }
             View.listEmployee(data);
         })
@@ -14,7 +14,7 @@ class Controller{
     static register(value){
         Model.register(value, (err, data) => {
             if(err){
-                throw err;
+                View.errorMsg();
             }
             View.register(value[0], value[3]);
         })
@@ -23,7 +23,7 @@ class Controller{
     static login(username_password){
         Model.login(username_password, (err, data) => {
             if(err){
-                throw err;
+                View.errorMsg()
             }
 
             if(typeof data === 'string'){
@@ -37,7 +37,7 @@ class Controller{
     static addPatient(patient){
         Model.addPatient(patient, (err, data) => {
             if(err){
-                throw err;
+                View.errorMsg();
             }
 
             if(typeof data === 'string'){
@@ -51,7 +51,7 @@ class Controller{
     static logout(){
         Model.logout((err, data) => {
             if(err){
-                throw err;
+                View.errorMsg();
             }
 
             View.logout();
