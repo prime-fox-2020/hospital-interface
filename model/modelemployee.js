@@ -1,4 +1,5 @@
 const fs = require('fs')
+const {Employee} = require('./modelPatientEmployee')
 
 class ModelEmployee {
   static readFile(callback1){
@@ -148,6 +149,20 @@ class ModelEmployee {
         callback6(null, position)
       }
     })
+  }
+  
+  static show(callback7){
+    this.readFile((err,data) =>{
+      if(err) callback4(err,null)
+      else{
+          const result = []
+          for(let i = 0; i < data.length; i++){
+            let temp = new Employee(data[i].name, data[i].position, data[i].username, data[i].password)
+            result.push(temp)
+          }
+          callback7(null, result)
+      }
+  })
   }
 }
 

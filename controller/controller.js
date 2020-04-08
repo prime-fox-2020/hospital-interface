@@ -24,11 +24,18 @@ class Controller{
         })
     }
 
+    static showEmployee(){
+        ModelEmployee.show((err,data) => {
+            if(err) View.printErr(err)
+            else View.printSuccess(data)
+        })
+    }
+
     static addPatient(params){
         ModelEmployee.checkPosition((err, pos) => {
             if(err) View.printErr(err)
             else{
-                ModelPatient.addPatient(params, pos, (error, msg) => {
+                ModelPatient.createOne(params, pos, (error, msg) => {
                     if(err) View.printErr(error)
                     else View.printSuccess(msg)
                 })
@@ -37,7 +44,7 @@ class Controller{
     }
 
     static showPatient(){
-        ModelPatient.showPatient((err,data) => {
+        ModelPatient.show((err,data) => {
             if(err) View.printErr(err)
             else View.printSuccess(data)
         })
@@ -52,7 +59,7 @@ class Controller{
 
     static showMsg(msg){
         if(msg === 'help'){
-            View.printSuccess('node index.js help\nnode index.js register <name> <position> <username> <password>\nnode index.js login <username> <password>\nnode index.js logout\nnode index.js addPatient <name> <diagnosis>\nnode index.js showPatient\nnode index.js deletePatient <id>\n')
+            View.printSuccess('node index.js help\nnode index.js register <name> <position> <username> <password>\nnode index.js login <username> <password>\nnode index.js logout\nnode index.js showEmployee\nnode index.js addPatient <name> <diagnosis>\nnode index.js showPatient\nnode index.js deletePatient <id>\n')
         }
         else{
             View.printSuccess(msg)

@@ -9,6 +9,7 @@ switch(command){
     case 'register' : Controller.register(params) ; break
     case 'login' : Controller.login(params); break
     case 'logout' : Controller.logout(); break
+    case 'showEmployee' : Controller.showEmployee(); break
     case 'addPatient' : Controller.addPatient(params); break
     case 'showPatient' : Controller.showPatient(); break
     case 'deletePatient' : Controller.deletePatient(Number(params[0])); break

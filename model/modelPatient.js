@@ -26,7 +26,7 @@ class ModelPatient{
           }
         })
     }
-    static addPatient(params, pos, callback3){
+    static createOne(params, pos, callback3){
         if(pos === 'doctor'){
             this.readFile((err,data) =>{
                 if(err) callback3(err, null)
@@ -50,7 +50,7 @@ class ModelPatient{
             callback3(null, 'no authority to add patient list')
         }
     }
-    static showPatient(callback4){
+    static show(callback4){
         this.readFile((err,data) =>{
             if(err) callback4(err,null)
             else{
