@@ -23,25 +23,35 @@ class ControllerHospital {
     }
 
     static showData(parameter) {
-        let status = ''; 
-        switch (parameter[0]) {
-            case undefined: status = 'patient'; break;
-            case 'patient': 
-            case 'employee': status = parameter[0]; break;
-            default: status = 'wrong';
-        }
-        if (status != 'wrong') {
-            ModelHospital.findAll(status, (err, data) => {
-                if (err) {
-                    ViewHospital.displayError(err);
+        ModelHospital.findAll('system', (err, system) => {
+            if (err) {
+                ViewHospital.displayError(err);
+            } else {
+                if (system[0].position == 'admin') {
+                    let status = ''; 
+                    switch (parameter[0]) {
+                        case undefined: status = 'patient'; break;
+                        case 'patient': 
+                        case 'employee': status = parameter[0]; break;
+                        default: status = 'wrong';
+                    }
+                    if (status != 'wrong') {
+                        ModelHospital.findAll(status, (err, data) => {
+                            if (err) {
+                                ViewHospital.displayError(err);
+                            } else {
+                                ViewHospital.displayData(data);
+                            }
+                        });
+                    } else {
+                        ViewHospital.showHelpWrongFormat();
+                        ViewHospital.showHelpDisplay();
+                    }
                 } else {
-                    ViewHospital.displayData(data);
+                    ViewHospital.notAdmin();
                 }
-            });
-        } else {
-            ViewHospital.showHelpWrongFormat();
-            ViewHospital.showHelpDisplay();
-        }
+            }
+        });
     }
 
     static login(userPass) {
@@ -56,7 +66,7 @@ class ControllerHospital {
                     ViewHospital.displayError(err);}
                 else {
                     if (system[0].login) {
-                        ViewHospital.displayLoggedIn();}
+                        ViewHospital.displayLoggedIn(system[0].user);}
                     else {
                         ModelHospital.findAll('employee', (err, data) => {
                             if (err) {
@@ -71,7 +81,7 @@ class ControllerHospital {
                                         ModelHospital.createAll('system', system, (err) => {
                                             if (err) {ViewHospital.displayError(err);}
                                         });
-                                        ViewHospital.loginSuccesfull(employee.name);
+                                        ViewHospital.loginSucces(employee.name);
                                         break;
                                     }
                                 }
@@ -82,6 +92,23 @@ class ControllerHospital {
                 }
             });
         }
+    }
+
+    static logout() {
+        ModelHospital.findAll('system', (err, system) => {
+            if (err) {
+                ViewHospital.displayError();
+            } else {
+                system[0].login = false;
+                system[0].user = "";
+                system[0].position = "";
+                system[0].timeStamp = "";
+                ModelHospital.createAll('system', system, (err) => {
+                    if (err) {ViewHospital.displayError(err);}
+                });
+                ViewHospital.logoutSucces();
+            }
+        });
     }
 
     static addPatient(patientData) {
@@ -101,7 +128,7 @@ class ControllerHospital {
                             ModelHospital.createAll('patient', data, (err) => {
                                 if (err) {ViewHospital.displayError(err);}
                             });
-                            ViewHospital.successAddingPatient(data.length);
+                            ViewHospital.addPatientSucces(data.length);
                         }
                     });
                 } else {
