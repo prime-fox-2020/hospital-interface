@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "Daniel",
+    "diagnosis": [
+      "Abab",
+      "Batuk",
+      "Pilek"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Aristo",
+    "diagnosis": [
+      "Pegal-pegal",
+      "Nyeri",
+      "Gatal"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mananta",
+    "diagnosis": [
+      "Pusing"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Vincent",
+    "diagnosis": [
+      "kurus",
+      "lemas",
+      "letih",
+      "lesu"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Yulius",
+    "diagnosis": [
+      "insomnia",
+      "resah"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Cahyonugroho",
+    "diagnosis": [
+      "mual",
+      "kembung"
+    ]
+  }
+]
