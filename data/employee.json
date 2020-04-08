@@ -3,11 +3,11 @@
     "_name": "Mas.Slameet",
     "_position": {
       "_isDoctor": true,
-      "_name": "Doktor"
+      "_name": "Dokter"
     },
     "_username": "slamet",
     "_password": "sugeng",
-    "_isLogin": false
+    "_isLogin": true
   },
   {
     "_name": "Mas.Joko",
@@ -17,6 +17,6 @@
     },
     "_username": "joko",
     "_password": "sugeng",
-    "_isLogin": true
+    "_isLogin": false
   }
 ]

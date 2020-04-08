@@ -1,13 +1,13 @@
 const Position = require('./Position')
 
-class Doktor extends Position {
+class Dokter extends Position {
   constructor() {
     super(true)
-    this._name = 'Doktor'
+    this._name = 'Dokter'
   }
   get name(){
     return this._name
   }
 }
 
-module.exports = Doktor
+module.exports = Dokter

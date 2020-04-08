@@ -7,5 +7,6 @@ switch (cmd) {
   case 'show': Controller.findAll(); break
   case 'register': Controller.register(params); break
   case 'login': Controller.login(params); break
+  case 'addPatient': Controller.addPatient(params); break
   default: break;
 }

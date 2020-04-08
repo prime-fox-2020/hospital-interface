@@ -1,4 +1,4 @@
-const Doktor = require('./Doktor')
+const Dokter = require('./Dokter')
 const Admin = require('./Admin')
 const Receptionist = require('./Receptionist')
 const OfficeBoy = require('./OfficeBoy')
@@ -43,7 +43,7 @@ class Employee {
 
   positionSelector(position) {
     switch (position) {
-      case 'doktor': return new Doktor(); break
+      case 'doktor': return new Dokter(); break
       case 'admin': return new Admin(); break
       case 'office-boy': return new OfficeBoy(); break
       case 'receptionist': return new Receptionist(); break
@@ -66,7 +66,7 @@ class Employee {
             employees[userIndex]._isLogin = true
             fs.writeFile('./data/employee.json', JSON.stringify(employees, null, 2), err => {
               if (err) {
-                callback(err, `Cant save data`)
+                callback(err, `Cant save data employee`)
               } else {
                 callback(null, `User ${params[0]} logged in successfully`)
               }

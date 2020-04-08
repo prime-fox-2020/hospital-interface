@@ -1,12 +1,15 @@
 class View {
 
-  static registerErr(msg) {
+  static serverError(msg) {
     console.log(msg)
   }
-  static registerSuccess(msg) {
+  static registerInfo(msg) {
     console.log(msg)
   }
   static loginInfo(msg) {
+    console.log(msg)
+  }
+  static addPatientInfo(msg) {
     console.log(msg)
   }
 }
