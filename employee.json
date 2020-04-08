@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "monkey D luffy",
+    "username": "luffy",
+    "password": "12345",
+    "position": "dokter",
+    "status": false
+  },
+  {
+    "id": 2,
+    "name": "roronoa zoro",
+    "username": "zoro",
+    "password": "12345",
+    "position": "admin",
+    "status": false
+  },
+  {
+    "id": 3,
+    "name": "tony tony chopper",
+    "username": "chopper",
+    "password": "12345",
+    "position": "dokter",
+    "status": false
+  },
+  {
+    "id": 4,
+    "name": "nico robin",
+    "username": "robin",
+    "password": "12345",
+    "position": "receptionist",
+    "status": false
+  },
+  {
+    "id": 5,
+    "name": "ussop",
+    "username": "ussop",
+    "password": "12345",
+    "position": "officeBoy",
+    "status": false
+  },
+  {
+    "id": 6,
+    "name": "tubagus",
+    "username": "zuhdi",
+    "password": "1234",
+    "position": "dokter",
+    "status": false
+  }
+]

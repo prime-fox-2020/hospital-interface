@@ -1,0 +1,3 @@
+node index.js help
+node index.js listEmployee
+node index.js register tubagus zuhdi 1234 dokter
