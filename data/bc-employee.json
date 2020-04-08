@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Suryo",
+    "username": "suryo",
+    "password": "pratomo",
+    "position": "admin",
+    "isLogin": false
+  },
+  {
+    "id": 2,
+    "name": "Susanti",
+    "username": "susanti",
+    "password": "asd",
+    "position": "dokter",
+    "isLogin": false
+  },
+  {
+    "id": 3,
+    "name": "Susanto",
+    "username": "susanto",
+    "password": "asd",
+    "position": "dokter",
+    "isLogin": false
+  },
+  {
+    "id": 4,
+    "name": "Susilo",
+    "username": "susilo",
+    "password": "asd",
+    "position": "dokter",
+    "isLogin": false
+  }
+]
