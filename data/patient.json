@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Abi",
+        "diagnosis": "sakit gublug"
+    },
+    {
+        "id": 2,
+        "name": "Umi",
+        "diagnosis": "patah cinta"
+    },
+    {
+        "id": 3,
+        "name": "Ana",
+        "diagnosis": "putus jiwa"
+    },
+    {
+        "id": 4,
+        "name": "Dira",
+        "diagnosis": "sakit hati"
+    }
+]

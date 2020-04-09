@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Hamzah",
+        "position": "Dokter",
+        "username": "Dokter",
+        "password": "Hamburger"
+    },
+    {
+        "name": "makan",
+        "position": "Dokter",
+        "username": "pisan",
+        "password": "indomie"
+    },
+    {
+        "name": "makan",
+        "position": "Admin",
+        "username": "mantap212",
+        "password": "pisan12karakter"
+    },
+    {
+        "name": "makan",
+        "position": "Doctor",
+        "username": "indomie",
+        "password": "mantap"
+    }
+]
