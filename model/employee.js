@@ -8,7 +8,6 @@ class Employee {
     this.password = password
   }
 
-
   //// ini isinya buat baca file ajah
   static list(callback){
     fs.readFile('./data/employee.json','utf8',(err,data) => {
@@ -29,14 +28,21 @@ class Employee {
   
   
   static register(name, position, username, password,callback){
-     
     this.list((err,data)=>{
       if(err){
         callback(err,null)
       }else{
       let newemployess = data
-      
-      newemployess.push(new Employee(name,position,username,password))
+
+      if(position == 'Admin'){
+        newemployess.push(new Admin(name,position,username,password))
+      }else if(position == 'Doctor'){
+        newemployess.push(new OfficeBoy(name,position,username,password))
+      }else if(position == 'OfficeBoy'){
+        newemployess.push(new Doctor(name,position,username,password))
+      }else if(position == 'Receptionist'){
+        newemployess.push(new Receptionist(name,position,username,password))
+      }
 
       fs.writeFile('./data/employee.json',JSON.stringify(newemployess,null,4), (err )=>{
         if(err){
@@ -64,7 +70,7 @@ class Employee {
        for(var i = 0 ; i < loginemployee.length ; i ++){
         if(loginemployee[i].username == username && loginemployee[i].password == password){
           logintrue = true
-          newLogin = new EmployeeLogin(username,password)
+          newLogin = new EmployeeLogin(username,password,loginemployee[i].position)
           loginData.push(newLogin);
           fs.writeFile(`./login.json`, JSON.stringify(loginData, null, 4), (err) => {
             if (err) {
@@ -98,7 +104,6 @@ class Employee {
             
           loginData.push(newLogin)
         
-
           fs.writeFile(`./login.json`, JSON.stringify(loginData, null, 4), (err,data) => {
             if (err) {
             cb(err,null)
@@ -110,12 +115,40 @@ class Employee {
       }
     })
   }
+
+
 }
 
+class Admin extends Employee {
+  constructor(name, position, username, password) {
+    super(name, position, username, password)
+  }
+}
+class OfficeBoy extends Employee {
+  constructor(name, position, username, password) {
+    super(name, position, username, password)
+  }
+}
+class Doctor extends Employee {
+  constructor(name, position, username, password) {
+    super(name, position, username, password)
+  }
+}
+class Receptionist extends Employee {
+  constructor(name, role, username, password, isLogin) {
+    super(name, role, username, password, isLogin)
+  }
+}
+
+
+
+
+
   class EmployeeLogin {
-    constructor(username, password) {
+    constructor(username, password,position) {
       this.username = username;
       this.password = password;
+      this.position = position;
     }
   }
   

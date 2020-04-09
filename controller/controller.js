@@ -1,5 +1,6 @@
 let Employee = require('../model/employee')
 let View = require('../view/view')
+let Patient = require('../model/patient')
 
 
 
@@ -35,7 +36,6 @@ class Controller {
             }
 
         })
-    
     }
 
     static logout(){
@@ -44,6 +44,18 @@ class Controller {
                 throw err
             }else{
                 console.log(data)
+            }
+        })
+    }
+
+    static registerPatient(name,diagnosis){
+        Patient.register(name,diagnosis,(err,data)=>{
+            if(err){
+                View.viewRegisterError(err)
+            }else{
+                console.log(data)
+                console.log(`berhasil`)
+                // View.viewRegister(data)
             }
         })
     }
