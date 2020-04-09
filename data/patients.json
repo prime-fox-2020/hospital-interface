@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "name": "Daniel",
+        "diagnosis": [
+            "batuk",
+            "flu",
+            "pilek",
+            "demam"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Adam",
+        "diagnosis": [
+            "batuk",
+            "flu",
+            "pilek",
+            "demam"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Mahmud",
+        "diagnosis": [
+            "batuk",
+            "flu",
+            "pilek",
+            "demam"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "daniel",
+        "diagnosis": [
+            "batuk",
+            "flu",
+            "pilek",
+            "demam"
+        ]
+    }
+]
