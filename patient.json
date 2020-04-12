@@ -1,9 +1,57 @@
 [
-    {
-        "id" : 1,
-        "name" : "hz", 
-        "diagnosis" : [
-            "demam"
-        ]
-    }
+  {
+    "id": 1,
+    "name": "hz",
+    "diagnosis": [
+      "demam"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "daniel",
+    "diagnosa": [
+      "batuk",
+      "flu"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "agung",
+    "diagnosa": [
+      "patah",
+      "hati",
+      "luka",
+      "dalam"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "agung",
+    "diagnosa": [
+      "patah",
+      "hati",
+      "luka",
+      "dalam"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "agung",
+    "diagnosa": [
+      "patah",
+      "hati",
+      "luka",
+      "dalam"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "agung",
+    "diagnosa": [
+      "patah",
+      "hati",
+      "luka",
+      "dalam"
+    ]
+  }
 ]

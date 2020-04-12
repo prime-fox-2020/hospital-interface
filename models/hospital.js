@@ -61,14 +61,11 @@ class Hospital {
     }
 
     static login(datas, callback) {
-
-        fs.readFile('./employee.json', (err, data) => {
-            //console.log(data)
+        fs.readFile('./employee.json', 'utf8', (err, data) => {
             if(err) {
-                console.log(err)
-                callback(err)
+                callback(err, null)
             } else {
-                //console.log(__dirname)
+                data = JSON.parse(data)
                 data.forEach(el => {
                     if(el.username === datas[0] && el.password === datas[1]) {
                         if(!el.isLogin) {
@@ -81,98 +78,88 @@ class Hospital {
                                     callback(null, true)
                                 }
                             })
+
                         } else {
                             callback(null, 'sedang login')
                         }
-                    }
-                });
-                callback(null, 'salah')
+                    } 
+                    
+                })
+                callback(null, 'username/password salah')
             }
         })
     }
 
-    static addPatient(datas, callback) {
+    static add(datas, callback) {
         fs.readFile('./patient.json', (err, data) => {
             if(err) {
                 callback(err)
             } else {
                 let parsData = JSON.parse(data)
-                let patientPerson = datas[0]
+                let totalPatient = datas[0]
                 let patientName = datas[1]
-                let diagnosis = datas.slice(2)
+                let diagnosa = datas.slice(2)
 
-                fs.readFile('./patient.json', (err, data) => {
+                fs.readFile('./employee.json', 'utf8', (err, data) => {
                     if(err) {
                         callback(err)
                     } else {
-                        let dataEmployee = data
+                        let dataParse = JSON.parse(data)
                         let cek = false
 
-                        dataEmployee.forEach(el => {
-                            if(el.isLogin) {
+                        dataParse.forEach(el => {
+                            if(el.isLogin){
                                 if(el.position === 'dokter') {
                                     cek = true
 
-                                    for(let i=0; i<patientPerson; i++) {
+                                    for(let i=0; i<totalPatient; i++) {
                                         parsData.push({
-                                            id:parsData[parsData.length-1].id +1,
-                                            name : patientPerson,
-                                            diagnosis :diagnosis
+                                            id : parsData[parsData.length -1].id +1,
+                                            name : patientName,
+                                            diagnosa : diagnosa
                                         })
                                     }
 
-                                    fs.writeFile('./patient.json', JSON.stringify(dataEmployee, null, 2), (err) => {
+                                    fs.writeFile('./patient.json', JSON.stringify(parsData, null, 2), (err) => {
                                         if(err) {
                                             callback(err)
                                         } else {
                                             callback(null, true)
                                         }
                                     })
+                                } else {
+                                    console.log("tidak bisa add pasien kamu bukan dokter")
                                 }
                             }
                         })
-
-                        if(cek) {
-                            callback(null, true)
-                        } else {
-                            callback(null, 'you can not add patient')
-                        }
                     }
+                    
                 })
             }
         })
     }
 
     static logout(callback) {
-      fs.readFile('./employee.json', 'utf8', (err, data) => {
-          if(err) {
-              callback(err)
-          } else {
+        fs.readFile('./employee.json', 'utf8', (err, data) => {
+            if(err) {
+                callback(err)
+            } else {
+                let parsData = JSON.parse(data)
+                for(let i=0; i<parsData.length; i++) {
+                    if(parsData[i].isLogin === true) {
+                        parsData[i].isLogin = false
 
-            const parsData = JSON.parse(data)
-            let cek = false
-
-            for(let i=0; i<parsData.length; i++) {
-                if(parsData[i].isLogin === true) {
-                    parsData[i].isLogin === false
-
-                    fs.writeFile('./employee.json', JSON.stringify(parsData, null, 2), (err) => {
-                        if(err) {
-                            callback(err)
-                        } else {
-                            callback(null, 'success logout')
-                        }
-                    })
-
-                    cek = true
+                        fs.writeFile('./employee.json', JSON.stringify(parsData, null, 2), (err) => {
+                            if(err) {
+                                callback(err)
+                            } else {
+                                callback(null, true)
+                            }
+                        })
+                    }
                 }
             }
-
-            if(cek === false) {
-                callback(null, 'can not logout')
-            }
-          }
-      })
+        })
     }
  
 }

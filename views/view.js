@@ -12,16 +12,20 @@ class View {
         console.log(`save data succes  "username: ${name}", "position: ${position}  `)
     }
 
-    static login(data) {
-        console.log('Login Succses')
+    static login (data) {
+        if(data.length > 2) {
+            console.log(data)
+        } else {
+            console.log(`user ${data[0]} success login`)
+        }
     }
 
-    static addPatient(data){
-        console.log(`added new data patient. total patient: ${data[0]} `)
+    static add(data) {
+        console.log(`suceess add patient, total patient ${data[0]}`)
     }
 
     static logout() {
-        console.log('user has been successfully logout!')
+        console.log('logout success')
     }
 }
 

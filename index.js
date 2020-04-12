@@ -12,10 +12,9 @@ switch(command) {
     case 'login' :
         Controller.login(datas)
         break
-    case 'addPatient' :
-        Controller.addPatient(datas)
+    case 'add' :
+        Controller.add(datas)
         break
     case 'logout' :
         Controller.logout()
-        
 }

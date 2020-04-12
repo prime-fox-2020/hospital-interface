@@ -6,7 +6,7 @@ class Controller {
     static showEmployee(){
         Hospital.showEmployee((err, data) => {
             if(err) {
-                View.show(err)
+                View.printError()
             } else {
                 View.show(data)
             }
@@ -16,7 +16,7 @@ class Controller {
     static register(data) {
         Hospital.register(data, (err, data) => {
             if (err) {
-                throw err
+                View.printError()
             } else {
                 View.register(data[0], data[3])
             }
@@ -24,36 +24,40 @@ class Controller {
     }
 
     static login(datas) {
-        //console.log(datas)
         Hospital.login(datas, (err, data) => {
             if(err) {
                 View.printError()
             } else {
-                View.login(data)
+                //View.login(datas)
+                if(typeof data === 'string') {
+                    View.login(data)
+                } else {
+                    View.login(datas)
+                }
             }
         })
     }
+ 
 
-    static addPatient(datas) {
-        Hospital.addPatient(datas, (err, data) => {
-            if(err) {
-                View.printError()
-            } else {
-                View.addPatient(data)
-            }
-        })
-    }
+   static add(datas) {
+       Hospital.add(datas, (err, data) => {
+           if(err) {
+               View.printError()
+           } else {
+               View.add(datas)
+           }
+       })
+   }
 
-    static logout() {
-        // console.log("co")
-        Hospital.logout((err, data) => {
-            if(err) {
-                View.printError()
-            } else {
-                View.logout()
-            }
-        })
-    }
+   static logout() {
+       Hospital.logout((err, data) => {
+           if(err) {
+               View.printError()
+           } else {
+               View.logout()
+           }
+       })
+   }
 }
 
 module.exports = Controller
